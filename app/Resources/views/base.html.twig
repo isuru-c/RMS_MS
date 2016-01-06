@@ -60,21 +60,21 @@
                             </li>
 
                             <li>
-                                <a href="{{ path('homepage') }}">
+                                <a href="{{ path('sport_homepage') }}">
                                     <i class="fa fa-bicycle"></i> Sports
                                 </a>
                             </li>
 
                             {% if app.user and (is_granted('ROLE_ADMIN') or is_granted('ROLE_STUDENT')) %}
                                 <li>
-                                    <a href="{{ path('homepage') }}">
+                                    <a href="{{ path('equipment_homepage') }}">
                                         <i class="fa fa-bel"></i> Equipments
                                     </a>
                                 </li>
 
                                 {% if app.user and is_granted('ROLE_ADMIN') %}
                                 <li>
-                                    <a href="{{ path('homepage') }}">
+                                    <a href="{{ path('student_homepage') }}">
                                         <i class="fa fa-child"></i> Students
                                     </a>
                                 </li>
@@ -83,13 +83,13 @@
                             {% endif %}
 
                             <li>
-                                <a href="{{ path('homepage') }}">
+                                <a href="{{ path('event_homepage') }}">
                                     <i class="fa fa-calendar"></i> Events
                                 </a>
                             </li>
 
                             <li>
-                                <a href="{{ path('homepage') }}">
+                                <a href="{{ path('achievement_homepage') }}">
                                     <i class="fa fa-trophy"></i> Achievements
                                 </a>
                             </li>

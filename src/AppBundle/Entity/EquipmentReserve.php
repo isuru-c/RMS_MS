@@ -140,7 +140,7 @@ class EquipmentReserve
     }
 
     /**
-     * Set student
+     * Set students
      *
      * @param \AppBundle\Entity\Student $student
      *
@@ -154,7 +154,7 @@ class EquipmentReserve
     }
 
     /**
-     * Get student
+     * Get students
      *
      * @return \AppBundle\Entity\Student
      */
