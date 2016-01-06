@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var string
@@ -52,6 +53,8 @@ class User
     }
 
     /**
+     * {@inheritdoc}
+     *
      * Get password
      *
      * @return string
@@ -75,6 +78,8 @@ class User
         return $this;
     }
 
+
+
     /**
      * Get role
      *
@@ -86,6 +91,39 @@ class User
     }
 
     /**
+     * Returns the roles or permissions granted to the user for security.
+     */
+    public function getRoles()
+    {
+        //$roles = $this->roles;
+
+        // guarantees that a user always has at least one role for security
+        //if (empty($roles)) {
+            //$roles[] = 'ROLE_USER';
+        //}
+
+        //return array_unique($roles);
+
+        return array($this->role);
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     *
      * Get username
      *
      * @return string
@@ -93,5 +131,26 @@ class User
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
+     */
+    public function getSalt()
+    {
+        // See "Do you need to use a Salt?" at http://symfony.com/doc/current/cookbook/security/entity_provider.html
+        // we're using bcrypt in security.yml to encode the password, so
+        // the salt value is built-in and you don't have to generate one
+
+        return;
+    }
+
+    /**
+     * Removes sensitive data from the user.
+     */
+    public function eraseCredentials()
+    {
+        // if you had a plainPassword property, you'd nullify it here
+        // $this->plainPassword = null;
     }
 }
