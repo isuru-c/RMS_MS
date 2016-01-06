@@ -72,7 +72,7 @@
                                     </a>
                                 </li>
 
-                                {% if app.user and is_granted('ROLE_ADMIN') %}
+                                    {% if app.user and is_granted('ROLE_ADMIN') %}
                                 <li>
                                     <a href="{{ path('student_homepage') }}">
                                         <i class="fa fa-child"></i> Students
@@ -130,8 +130,10 @@
                 {% block sidebar %}
 
                     <div class="section about">
-                        {% block side_navigation %}
-                        {% endblock %}
+                        <div class="well well-lg">
+                            {% block side_navigation %}
+                            {% endblock %}
+                        </div>
                     </div>
 
                     <div class="section about">

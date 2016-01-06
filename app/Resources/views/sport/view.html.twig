@@ -1,0 +1,31 @@
+{# sport/view #}
+
+{% extends 'sport/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    List of all sports
+
+    <table>
+        <thead>
+        <tr>
+            <th>Sport name</th>
+            <th>For</th>
+            <th>Age Limit</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for sport in sports %}
+            <tr>
+                <td> {{ sport.name }} </td>
+                <td> {{ sport.gender }} </td>
+                <td> {{ sport.minimumAge }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
