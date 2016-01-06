@@ -1,0 +1,78 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Match
+ *
+ * @ORM\Table(name="match", indexes={@ORM\Index(name="sport_id", columns={"sport_id"})})
+ * @ORM\Entity
+ */
+class Match
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="type", type="integer", nullable=false)
+     */
+    private $type;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="start_date", type="date", nullable=false)
+     */
+    private $startDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="end_date", type="date", nullable=false)
+     */
+    private $endDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="state", type="integer", nullable=false)
+     */
+    private $state;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="oppenent", type="string", length=100, nullable=true)
+     */
+    private $oppenent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="remarks", type="string", length=500, nullable=true)
+     */
+    private $remarks;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Sport
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Sport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="sport_id", referencedColumnName="id")
+     * })
+     */
+    private $sport;
+
+
+}
+

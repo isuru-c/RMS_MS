@@ -1,0 +1,60 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * EquipmentReserve
+ *
+ * @ORM\Table(name="equipment_reserve", indexes={@ORM\Index(name="student_id", columns={"student_id", "equipment_id"}), @ORM\Index(name="equipment_id", columns={"equipment_id"}), @ORM\Index(name="IDX_699B25CDCB944F1A", columns={"student_id"})})
+ * @ORM\Entity
+ */
+class EquipmentReserve
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="reserved_date", type="date", nullable=false)
+     */
+    private $reservedDate;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="state", type="integer", nullable=false)
+     */
+    private $state;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Equipment
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipment")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="equipment_id", referencedColumnName="id")
+     * })
+     */
+    private $equipment;
+
+    /**
+     * @var \AppBundle\Entity\Student
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Student")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="student_id", referencedColumnName="id")
+     * })
+     */
+    private $student;
+
+
+}
+

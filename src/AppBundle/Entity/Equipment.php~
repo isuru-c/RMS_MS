@@ -1,0 +1,50 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Equipment
+ *
+ * @ORM\Table(name="equipment", indexes={@ORM\Index(name="equipment_category", columns={"equipment_category_id"})})
+ * @ORM\Entity
+ */
+class Equipment
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="available", type="integer", nullable=false)
+     */
+    private $available;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="reserved", type="integer", nullable=false)
+     */
+    private $reserved;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\EquipmentCategory
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\EquipmentCategory")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="equipment_category_id", referencedColumnName="id")
+     * })
+     */
+    private $equipmentCategory;
+
+
+}
+

@@ -1,0 +1,50 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * EquipmentCategory
+ *
+ * @ORM\Table(name="equipment_category", indexes={@ORM\Index(name="sport", columns={"sport_id"})})
+ * @ORM\Entity
+ */
+class EquipmentCategory
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="lend_time", type="integer", nullable=false)
+     */
+    private $lendTime;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Sport
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Sport")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="sport_id", referencedColumnName="id")
+     * })
+     */
+    private $sport;
+
+
+}
+

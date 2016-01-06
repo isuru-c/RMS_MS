@@ -1,0 +1,89 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Student
+ *
+ * @ORM\Table(name="student")
+ * @ORM\Entity
+ */
+class Student
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=30, nullable=false)
+     */
+    private $firstName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="second_name", type="string", length=30, nullable=true)
+     */
+    private $secondName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="faculty", type="string", length=20, nullable=false)
+     */
+    private $faculty;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="department", type="string", length=30, nullable=false)
+     */
+    private $department;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gender", type="string", length=6, nullable=false)
+     */
+    private $gender;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="birthday", type="date", nullable=false)
+     */
+    private $birthday;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contact_number", type="string", length=10, nullable=false)
+     */
+    private $contactNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="e_mail", type="string", length=50, nullable=true)
+     */
+    private $eMail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=200, nullable=true)
+     */
+    private $address;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string", length=8)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}
+
