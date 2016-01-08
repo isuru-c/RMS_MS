@@ -1,0 +1,23 @@
+{# sport/edit #}
+
+{% extends 'sport/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    {% if form is defined %}
+        {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+        <div class="col-sm-11">
+            <div class="well">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    {% else %}
+        Sport details succesfully updated
+    {% endif %}
+
+{% endblock %}

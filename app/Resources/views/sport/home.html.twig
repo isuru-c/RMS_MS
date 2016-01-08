@@ -3,9 +3,9 @@
 {% extends 'base.html.twig' %}
 
 {% block side_navigation %}
-    <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" ><a href="#">All Sports</a></li>
-        <li role="presentation" ><a href="#">Sports statics</a></li>
+    <ul class="nav nav-tabs nav-stacked">
+        <li role="presentation" ><a href=" {{ path('sport_view') }}">All Sports</a></li>
+        <li role="presentation" ><a href="">Sports statics</a></li>
         <li role="presentation" ><a href="#">Coaches</a></li>
         {% if app.user and is_granted('ROLE_ADMIN') %}
         <li role="presentation" ><a href="{{ path('sport_new') }}">Add new sport</a></li>

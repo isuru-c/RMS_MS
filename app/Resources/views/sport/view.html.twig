@@ -7,25 +7,45 @@
 
 {% block main %}
 
-    List of all sports
+       List of all sports
 
-    <table>
-        <thead>
-        <tr>
-            <th>Sport name</th>
-            <th>For</th>
-            <th>Age Limit</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for sport in sports %}
+        <table class="table table-striped">
+            <thead>
             <tr>
-                <td> {{ sport.name }} </td>
-                <td> {{ sport.gender }} </td>
-                <td> {{ sport.minimumAge }} </td>
+                <th><i class="fa fa-trophy"></i> Sport name</th>
+                <th><i class="fa fa-genderless"></i>This is for</th>
+                <th><i class="fa fa-unlock-alt"></i> Age Limit</th>
+                <th><i class="fa fa-hand-o-right"></i> Coach</th>
+                <th><i class="fa fa-cogs"></i> Actions</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for sport in sports %}
+                <tr>
+                    <td> {{ sport.name }} </td>
+                    <td> {% if sport.gender == 'Male' %}
+                            <i class="fa fa-male"></i> Male
+                        {% else %}
+                            <i class="fa fa-female"></i> Female
+                        {% endif %}
+                    </td>
+                    <td> {{ sport.minimumAge }} </td>
+                    <td></td>
+                    <td>
+                        <div class="item-actions">
+                            <a href="{{ path('sport_view', {'id':sport.id}) }}" class="btn btn-sm btn-default">
+                                <i class="fa fa-eye"></i> Show
+                            </a>
+                            {% if app.user and is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('sport_edit', {'id':sport.id}) }}" class="btn btn-sm btn-primary">
+                                    <i class="fa fa-edit"></i> Edit
+                                </a>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
 {% endblock %}

@@ -1,0 +1,38 @@
+{# sport/view #}
+
+{% extends 'sport/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="well-sm">
+                <h3>{{ sport.name }} - {{ sport.gender }}</h3>
+                <h5>
+                    {% if sport.minimumAge != 0 %}
+                        For student above {{ sport.minimumAge }} years
+                    {% else %}
+                        Age limit is not specified
+                    {% endif %}
+                </h5>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="well-lg">
+                The picture goes here
+            </div>
+        </div>
+    </div>
+
+    <p>
+        {{ sport.description }}
+    </p>
+
+    <div class="">
+        Every other things will be appear here
+    </div>
+
+{% endblock %}
