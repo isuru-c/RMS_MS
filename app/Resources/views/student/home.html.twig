@@ -1,12 +1,20 @@
+{# student/home #}
+
 {% extends 'base.html.twig' %}
 
 {% block side_navigation %}
-    yfyggyyhu
-    gyvgy
+    <ul class="nav nav-tabs nav-stacked">
+        <li role="presentation" ><a href=""></a></li>
+        <li role="presentation" ><a href=""></a></li>
+        <li role="presentation" ><a href="#"></a></li>
+        {% if app.user and is_granted('ROLE_ADMIN') %}
+            <li role="presentation" ><a href="{{ path('student_new') }}">Add new student</a></li>
+        {% endif %}
+    </ul>
 {% endblock %}
 
 {% block about %}
-    trftfygyg
+
 {% endblock %}
 
 {% block main %}

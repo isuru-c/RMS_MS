@@ -85,7 +85,7 @@ class Awards
     }
 
     /**
-     * Set students
+     * Set student
      *
      * @param \AppBundle\Entity\Student $student
      *
@@ -99,7 +99,7 @@ class Awards
     }
 
     /**
-     * Get students
+     * Get student
      *
      * @return \AppBundle\Entity\Student
      */

@@ -81,7 +81,7 @@ class SportController extends Controller
 
     /**
      * @Route("/sport/edit/{id}", defaults={"id" = 0}, name="sport_edit")
-     *
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function sportEditAction(Request $request, $id)
     {

@@ -53,8 +53,6 @@ class User implements UserInterface
     }
 
     /**
-     * {@inheritdoc}
-     *
      * Get password
      *
      * @return string
@@ -78,8 +76,6 @@ class User implements UserInterface
         return $this;
     }
 
-
-
     /**
      * Get role
      *
@@ -99,12 +95,22 @@ class User implements UserInterface
 
         // guarantees that a user always has at least one role for security
         //if (empty($roles)) {
-            //$roles[] = 'ROLE_USER';
+        //$roles[] = 'ROLE_USER';
         //}
 
         //return array_unique($roles);
 
         return array($this->role);
+    }
+
+    /**
+     * Get username
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
     }
 
     /**
@@ -119,18 +125,6 @@ class User implements UserInterface
         $this->username = $username;
 
         return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * Get username
-     *
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->username;
     }
 
     /**
