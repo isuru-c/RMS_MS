@@ -8,27 +8,39 @@
 {% block main %}
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="well-sm">
                 <h3>{{ sport.name }} - {{ sport.gender }}</h3>
                 <h5>
-                    {% if sport.minimumAge != 0 %}
-                        For student above {{ sport.minimumAge }} years
+                    {% if sport.minimum_age != 0 %}
+                        For student above {{ sport.minimum_age }} years
                     {% else %}
                         Age limit is not specified
                     {% endif %}
                 </h5>
             </div>
         </div>
-        <div class="col-sm-6">
+
+        <div class="col-sm-4">
             <div class="well-lg">
                 The picture goes here
             </div>
         </div>
+
+        <div c  lass="col-sm-2">
+            {% if app.user and is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('sport_edit', {'id':sport.id}) }}" class="btn btn-sm btn-primary">
+                        <i class="fa fa-edit"></i>
+                        Edit this sport details
+                    </a>
+            {% endif %}
+        </div>
     </div>
 
     <div class="row">
-        {{ sport.description }}
+        <div class="col-sm-10">
+            {{ sport.description }}
+        </div>
     </div>
 
     <div class="well-lg">

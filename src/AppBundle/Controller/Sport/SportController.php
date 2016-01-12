@@ -51,30 +51,42 @@ class SportController extends Controller
         ));
     }
 
+
     /**
      * @Route("/sport/view/{id}", defaults={"id" = 0}, name="sport_view")
      *
      */
     public function sportViewAction(Request $request, $id)
     {
+        $em = $this->getDoctrine()->getEntityManager();
+        $connection = $em->getConnection();
+
         if($id == 0) {
-            $sports = $this->getDoctrine()
-                ->getRepository('AppBundle:Sport')->findAll();
+
+            $query = "SELECT * FROM sport";
+            $statement = $connection->query($query);
+            $statement->execute();
+            $sports = $statement->fetchAll();
 
             return $this->render('sport/view.html.twig', array(
-                'sports' => $sports, 'coaches' => $this->getAllCoaches(),
+                'sports' => $sports, 'coaches' => 'need to get coach list',
             ));
         }
 
-        $sport = $this->getDoctrine()
-            ->getRepository('AppBundle:Sport')->find($id);
+        $query = "SELECT * FROM sport WHERE id=" . $id ;
+        $statement = $connection->query($query);
+        $statement->execute();
+        $sport = $statement->fetchAll();
 
         if(!$sport){
             throw new \Doctrine\ORM\NoResultException;
         }
         else{
+
             return $this->render('sport/view1.html.twig', array(
-                'sport' => $sport,
+                'sport' => $sport[0], 'ach_sum' => $this->getAchievementSummary($id),
+                'stu_sum' => $this->getStudentSummary($id), 'evn_sum' => $this->getEventSummary($id),
+                'equ_sum' => $this->getEquipmentSummary($id),
             ));
         }
     }
@@ -116,8 +128,24 @@ class SportController extends Controller
         ));
     }
 
+    function getStudentSummary($id){
 
-    private function getAllCoaches(){
-        return 'not yet implemented';
+        return "still have to implement";
     }
+
+    public function getEventSummary($id){
+
+        return "still have to implement";
+    }
+
+    public function getAchievementSummary($id){
+
+        return "still have to implement";
+    }
+
+    public function getEquipmentSummary($id){
+
+        return "still have to implement";
+    }
+
 }
