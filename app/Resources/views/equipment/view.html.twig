@@ -1,0 +1,83 @@
+{# equipment/view #}
+
+{% extends 'equipment/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="row ">
+        <div class="well">
+            <h5>Select a sport </h5>
+
+            <div class="row">
+                <form method="post" action="">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <select name="sport_id" required="required" class="form-control">
+                                <option value selected="selected">Choose a sport</option>
+                                {% for sport in sports %}
+                                    <option value="{{ sport.id }}" {% if sport.id == sport_id %} selected="selected" {% endif %}>
+                                        {{ sport.name }}-{{ sport.gender }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn-primary btn">Select</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="well">
+
+            {% if category_list is defined %}
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th> Category name</th>
+                            <th> Lend time</th>
+                            <th> Total amount</th>
+                            <th> Available amount</th>
+                            <th> Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for category in category_list %}
+                        <tr>
+                            <td> {{ category.name }} </td>
+                            <td> {{ category.lend_time }}  </td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <div class="item-actions">
+                                    <a href="" class="btn btn-sm btn-default">
+                                        <i class=""></i> Choose
+                                    </a>
+                                    {% if app.user and is_granted('ROLE_ADMIN') %}
+                                        <a href="" class="btn btn-sm btn-primary">
+                                            <i class=""></i> Edit
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            {% else %}
+                Please select a sport from above
+            {% endif %}
+
+
+        </div>
+    </div>
+
+{% endblock %}

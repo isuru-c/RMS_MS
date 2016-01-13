@@ -36,14 +36,25 @@ class EquipmentController extends Controller
         $statement->execute();
         $sports = $statement->fetchAll();
 
+        if($request->isMethod('POST')){
+            $sport_id = $request->request->get('sport_id');
+        }
+
         if($sport_id == 0){
 
             return $this->render('equipment/view.html.twig', array(
-                'sports' => $sports,
+                'sports' => $sports, 'sport_id' => $sport_id,
             ));
         }
 
+        $query = "SELECT * FROM equipment_category WHERE sport_id=$sport_id";
+        $statement = $connection->prepare($query);
+        $statement->execute();
+        $category_list = $statement->fetchAll();
 
+        return $this->render('equipment/view.html.twig', array(
+            'sports' => $sports, 'sport_id' => $sport_id, 'category_list' => $category_list,
+        ));
 
     }
 

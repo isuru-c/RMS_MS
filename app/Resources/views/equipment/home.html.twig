@@ -4,7 +4,7 @@
 
 {% block side_navigation %}
     <div class="list-group">
-        <a href="" class="list-group-item">Browse equipments</a>
+        <a href="{{ path('equipment_view') }}" class="list-group-item">Browse equipments</a>
         <a href="" class="list-group-item">Equipments statics</a>
         {% if app.user and is_granted('ROLE_ADMIN') %}
         <a href="{{ path('equipment_add') }}" class="list-group-item">Add new equipments</a>
