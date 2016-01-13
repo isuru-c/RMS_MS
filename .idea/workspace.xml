@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bbb0c92-7d74-4665-9844-436e6c79a873" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/equipment/home.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/equipment/home.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/sport/view.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/sport/view.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RMS_MS.iws" />
@@ -31,37 +30,31 @@
       <file leaf-file-name="EquipmentController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.481482">
-              <caret line="55" column="91" selection-start-line="55" selection-start-column="77" selection-end-line="55" selection-end-column="91" />
+            <state vertical-scroll-proportion="-13.148149">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding>
                 <element signature="e#50#109#0#PHP" expanded="true" />
-                <element signature="e#1967#4081#0#PHP" expanded="false" />
-                <marker date="1452718468456" expanded="true" signature="1045:1079" placeholder="SELECT id, n..sport..." />
-                <marker date="1452718468456" expanded="true" signature="1523:1571" placeholder="SELECT * FRO..equipment_category..." />
-                <marker date="1452718468456" expanded="true" signature="1523:1572" placeholder="SELECT * FRO..equipment_category..." />
-                <marker date="1452718468456" expanded="true" signature="3149:3179" placeholder="INSERT INTO ..." />
-                <marker date="1452718468456" expanded="true" signature="3516:3564" placeholder="SELECT MAX(i..equipment_category..." />
-                <marker date="1452718468456" expanded="true" signature="4386:4460" placeholder="INSERT INTO ..." />
+                <marker date="1452722595200" expanded="true" signature="1045:1079" placeholder="SELECT id, n..sport..." />
+                <marker date="1452722595200" expanded="true" signature="1523:1571" placeholder="SELECT * FRO..equipment_category..." />
+                <marker date="1452722595200" expanded="true" signature="1523:1572" placeholder="SELECT * FRO..equipment_category..." />
+                <marker date="1452722595200" expanded="true" signature="2302:2344" placeholder="SELECT name,..sport..." />
+                <marker date="1452722595200" expanded="true" signature="2302:2345" placeholder="SELECT name,..sport..." />
+                <marker date="1452722595200" expanded="true" signature="2571:2626" placeholder="SELECT name,..sport..." />
+                <marker date="1452722595200" expanded="true" signature="2571:2627" placeholder="SELECT name,..sport..." />
+                <marker date="1452722595200" expanded="true" signature="2571:2628" placeholder="SELECT name,..sport..." />
+                <marker date="1452722595200" expanded="true" signature="4166:4196" placeholder="INSERT INTO ..." />
+                <marker date="1452722595200" expanded="true" signature="4533:4581" placeholder="SELECT MAX(i..equipment_category..." />
+                <marker date="1452722595200" expanded="true" signature="5403:5477" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig">
+      <file leaf-file-name="single.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.81663835">
-              <caret line="64" column="55" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/sport/view.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.148148">
-              <caret line="48" column="16" selection-start-line="11" selection-start-column="8" selection-end-line="48" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.4278438">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -84,10 +77,11 @@
         <option value="$PROJECT_DIR$/app/Resources/views/sport/home.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/equipment/new.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/EquipmentCategory.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/equipment/home.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/sport/view.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php" />
       </list>
     </option>
   </component>
@@ -700,14 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/sport/view.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.148148">
-          <caret line="48" column="16" selection-start-line="11" selection-start-column="8" selection-end-line="48" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18336163">
@@ -716,27 +702,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2224109">
+          <caret line="40" column="45" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/sport/view.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8777589">
+          <caret line="48" column="16" selection-start-line="11" selection-start-column="8" selection-end-line="48" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.481482">
-          <caret line="55" column="91" selection-start-line="55" selection-start-column="77" selection-end-line="55" selection-end-column="91" />
+        <state vertical-scroll-proportion="-13.148149">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="e#50#109#0#PHP" expanded="true" />
-            <element signature="e#1967#4081#0#PHP" expanded="false" />
-            <marker date="1452718468456" expanded="true" signature="1045:1079" placeholder="SELECT id, n..sport..." />
-            <marker date="1452718468456" expanded="true" signature="1523:1571" placeholder="SELECT * FRO..equipment_category..." />
-            <marker date="1452718468456" expanded="true" signature="1523:1572" placeholder="SELECT * FRO..equipment_category..." />
-            <marker date="1452718468456" expanded="true" signature="3149:3179" placeholder="INSERT INTO ..." />
-            <marker date="1452718468456" expanded="true" signature="3516:3564" placeholder="SELECT MAX(i..equipment_category..." />
-            <marker date="1452718468456" expanded="true" signature="4386:4460" placeholder="INSERT INTO ..." />
+            <marker date="1452722595200" expanded="true" signature="1045:1079" placeholder="SELECT id, n..sport..." />
+            <marker date="1452722595200" expanded="true" signature="1523:1571" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1452722595200" expanded="true" signature="1523:1572" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1452722595200" expanded="true" signature="2302:2344" placeholder="SELECT name,..sport..." />
+            <marker date="1452722595200" expanded="true" signature="2302:2345" placeholder="SELECT name,..sport..." />
+            <marker date="1452722595200" expanded="true" signature="2571:2626" placeholder="SELECT name,..sport..." />
+            <marker date="1452722595200" expanded="true" signature="2571:2627" placeholder="SELECT name,..sport..." />
+            <marker date="1452722595200" expanded="true" signature="2571:2628" placeholder="SELECT name,..sport..." />
+            <marker date="1452722595200" expanded="true" signature="4166:4196" placeholder="INSERT INTO ..." />
+            <marker date="1452722595200" expanded="true" signature="4533:4581" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1452722595200" expanded="true" signature="5403:5477" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81663835">
-          <caret line="64" column="55" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.4278438">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding />
         </state>
       </provider>

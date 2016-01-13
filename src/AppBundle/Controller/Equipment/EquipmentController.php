@@ -58,6 +58,35 @@ class EquipmentController extends Controller
 
     }
 
+    /**
+     * @Route("/equipment/view/single/{cat_id}", defaults={"cat_id"=0}, name="equipment_view_single")
+     */
+    public function viewSingleEquipmentAction(Request $request, $cat_id){
+
+        if($cat_id == 0){
+            return $this->redirectToRoute('equipment_view');
+        }
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $connection = $em->getConnection();
+
+        $query = "SELECT name, gender FROM sport WHERE id IN ";
+        $query .= "(SELECT sport_id FROM equipment_category WHERE id=$cat_id)";
+
+        $statement = $connection->prepare($query);
+        $statement->execute();
+        $sport = $statement->fetchAll();
+
+        $query = "SELECT name, lend_time FROM equipment_category WHERE id=$cat_id ";
+
+        $statement = $connection->prepare($query);
+        $statement->execute();
+        $category = $statement->fetchAll();
+
+        return $this->render('equipment/single.html.twig', array(
+            'sport' => $sport, 'category' => $category[0],
+        ));
+    }
 
     /**
      * @Route("/equipment/new", name="equipment_add")

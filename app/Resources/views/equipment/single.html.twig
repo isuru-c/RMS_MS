@@ -1,0 +1,28 @@
+{# equipment/single #}
+
+{% extends 'equipment/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="row ">
+        <div class="well">
+            <h5>Show single equipment </h5>
+
+            Sport           - {{ sport.name }}-{{ sport.gender }} </br>
+            Equipment name  - {{ category.name }}
+            Lend time       - {{ category.lend_time }}
+
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="well">
+
+
+        </div>
+    </div>
+
+{% endblock %}
