@@ -1,0 +1,54 @@
+{# equipment/new #}
+
+{% extends 'equipment/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    {% if form is defined %}
+        <div class="row well" xmlns="http://www.w3.org/1999/html">
+            Adding new equipment to the system
+        </div>
+
+        {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+        <div class="col-sm-11">
+            <div class="well">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    {% else %}
+        <div class="row well">
+            <h4>New sport equipment successfully added to the system</h4>
+
+            Sport name    - {{ sport.name }} </br>
+            Category name - {{ equipment.name }} </br>
+            Lend time     - {{ equipment.lendTime }} </br>
+            Category Id   - {{ equipment.id }}
+        </div>
+
+        <div class="row ">
+            <div class="well">
+                <h5>Please enter how many {{ equipment.name}}s are currently exists for the sport {{ sport.name }}</h5>
+
+                <div class="row">
+                    <form method="post" action="{{ path('equipment_add_finish', {'cat_id':equipment.id}) }}">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <input name="noe" type="number" required="required" class="form-control">
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="submit" class="btn-primary btn">Finish</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+{% endblock %}

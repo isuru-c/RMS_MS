@@ -43,141 +43,159 @@
         </div>
     </div>
 
-    <div class="well-lg">
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#achievement">Achievements</a></li>
-            <li><a data-toggle="tab" href="#event">Events</a></li>
-            <li><a data-toggle="tab" href="#equipment">Equipments</a></li>
-            <li><a data-toggle="tab" href="#student">Students</a></li>
-        </ul>
+    <div id="achievement">
 
-        <div class="tab-content">
-
-            <div id="achievement" class="tab-pane fade in active">
-
-                <div class="row">
-                    <div class="well-lg">
-                        Summary of achievements of {{ sport.name }} sport goes here
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="item-actions">
-                            <a href="" class="btn btn-sm btn-primary">
-                                <i class="fa fa-eye"></i>
-                                Go to achievements
-                            </a>
-                        </div>
-                    </div>
-                    {% if app.user and is_granted('ROLE_ADMIN') %}
-                        <div class="col-sm-3">
-                            <div class="item-actions">
-                                <a href="" class="btn btn-sm btn-primary">
-                                    <i class="fa fa-eye"></i>
-                                    Add new achievements
-                                </a>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-
+        <div class="row">
+            <div class="well-lg">
+                Summary of achievements of {{ sport.name }} sport goes here
             </div>
-
-            <div id="event" class="tab-pane fade">
-
-                <div class="row">
-                    <div class="well-lg">
-                        Summary of events of {{ sport.name }} sport goes here
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="item-actions">
-                            <a href="" class="btn btn-sm btn-primary">
-                                <i class="fa fa-eye"></i>
-                                Go to events
-                            </a>
-                        </div>
-                    </div>
-                    {% if app.user and is_granted('ROLE_ADMIN') %}
-                        <div class="col-sm-3">
-                            <div class="item-actions">
-                                <a href="" class="btn btn-sm btn-primary">
-                                    <i class="fa fa-eye"></i>
-                                    Add new events
-                                </a>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-
-            </div>
-
-            <div id="equipment" class="tab-pane fade">
-
-                <div class="row">
-                    <div class="well-lg">
-                        Summary of equipments of {{ sport.name }} sport goes here
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="item-actions">
-                            <a href="" class="btn btn-sm btn-primary">
-                                <i class="fa fa-eye"></i>
-                                Go to equipments
-                            </a>
-                        </div>
-                    </div>
-                    {% if app.user and is_granted('ROLE_ADMIN') %}
-                        <div class="col-sm-3">
-                            <div class="item-actions">
-                                <a href="" class="btn btn-sm btn-primary">
-                                    <i class="fa fa-eye"></i>
-                                    Add new equipments
-                                </a>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-
-            </div>
-
-            <div id="student" class="tab-pane fade">
-
-                <div class="row">
-                    <div class="well-lg">
-                        Summary of students of {{ sport.name }} sport goes here
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="item-actions">
-                            <a href="" class="btn btn-sm btn-primary">
-                                <i class="fa fa-eye"></i>
-                                Go to students
-                            </a>
-                        </div>
-                    </div>
-                    {% if app.user and is_granted('ROLE_ADMIN') %}
-                        <div class="col-sm-3">
-                            <div class="item-actions">
-                                <a href="" class="btn btn-sm btn-primary">
-                                    <i class="fa fa-eye"></i>
-                                    Add new student
-                                </a>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-
-            </div>
-
         </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="item-actions">
+                    <a href="" class="btn btn-sm btn-primary">
+                        <i class="fa fa-eye"></i>
+                        Go to achievements
+                    </a>
+                </div>
+            </div>
+            {% if app.user and is_granted('ROLE_ADMIN') %}
+                <div class="col-sm-3">
+                    <div class="item-actions">
+                        <a href="" class="btn btn-sm btn-primary">
+                            <i class="fa fa-eye"></i>
+                            Add new achievements
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div id="event">
+
+        <div class="row">
+            <div class="well-lg">
+                Summary of events of {{ sport.name }} sport goes here
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="item-actions">
+                    <a href="" class="btn btn-sm btn-primary">
+                        <i class="fa fa-eye"></i>
+                        Go to events
+                    </a>
+                </div>
+            </div>
+            {% if app.user and is_granted('ROLE_ADMIN') %}
+                <div class="col-sm-3">
+                    <div class="item-actions">
+                        <a href="" class="btn btn-sm btn-primary">
+                            <i class="fa fa-eye"></i>
+                            Add new events
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div id="equipment">
+
+        <div class="row">
+            <div class="well-lg">
+                Summary of equipments of {{ sport.name }} sport goes here
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="item-actions">
+                    <a href="" class="btn btn-sm btn-primary">
+                        <i class="fa fa-eye"></i>
+                        Go to equipments
+                    </a>
+                </div>
+            </div>
+            {% if app.user and is_granted('ROLE_ADMIN') %}
+                <div class="col-sm-3">
+                    <div class="item-actions">
+                        <a href="" class="btn btn-sm btn-primary">
+                            <i class="fa fa-eye"></i>
+                            Add new equipments
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div id="student">
+
+        <div class="row">
+            <div class="well-lg">
+                Summary of students of {{ sport.name }} sport goes here
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="item-actions">
+                    <a href="" class="btn btn-sm btn-primary">
+                        <i class="fa fa-eye"></i>
+                        Go to students
+                    </a>
+                </div>
+            </div>
+            {% if app.user and is_granted('ROLE_ADMIN') %}
+                <div class="col-sm-3">
+                    <div class="item-actions">
+                        <a href="" class="btn btn-sm btn-primary">
+                            <i class="fa fa-eye"></i>
+                            Add new student
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div id="practice">
+
+        <div class="row">
+            <div class="well-lg">
+                Summary of practice of {{ sport.name }} sport goes here
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="item-actions">
+                    <a href="" class="btn btn-sm btn-primary">
+                        <i class="fa fa-eye"></i>
+                        Go to practice
+                    </a>
+                </div>
+            </div>
+            {% if app.user and is_granted('ROLE_ADMIN') %}
+                <div class="col-sm-3">
+                    <div class="item-actions">
+                        <a href="" class="btn btn-sm btn-primary">
+                            <i class="fa fa-eye"></i>
+                            Add new practice schedule
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
     </div>
 
     <div class="row">

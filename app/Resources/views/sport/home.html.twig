@@ -4,11 +4,11 @@
 
 {% block side_navigation %}
     <div class="list-group">
-        <a href=" {{ path('sport_view') }} " class="list-group-item">All Sports</a></li>
-        <a href="" class="list-group-item">Sports statics</a></li>
-        <a href="#" class="list-group-item">Coaches</a></li>
+        <a href=" {{ path('sport_view') }} " class="list-group-item">All Sports</a>
+        <a href="" class="list-group-item">Sports statics</a>
+        <a href="#" class="list-group-item">Coaches</a>
         {% if app.user and is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('sport_new') }}" class="list-group-item">Add new sport</a></li>
+        <a href="{{ path('sport_new') }}" class="list-group-item">Add new sport</a>
         {% endif %}
     </div>
 {% endblock %}

@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 --
 
 INSERT INTO `student` (`id`, `first_name`, `second_name`, `faculty`, `department`, `gender`, `birthday`, `contact_number`, `e_mail`, `address`) VALUES
-('130102T', 'Isuru', 'Chandima', 'Engineering', 'Computer Science', 'Male', '1993-09-03', '0778581019', 'isuru.13@cse.mrt.ac.lk', '151/B, Ambalangoda, Rukmale, Veyangoda');
+('130102T', 'Isuru', 'Chandima', 'Engineering', 'Computer Science', 'Male', '2013-09-03', '0778581019', 'isuru.13@cse.mrt.ac.lk', '151/B, Ambalangoda, Rukmale, Veyangoda');
 
 -- --------------------------------------------------------
 

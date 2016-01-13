@@ -96,6 +96,20 @@ class EquipmentCategory
     }
 
     /**
+     * Set id
+     *
+     * @param integer $id
+     *
+     * @return EquipmentCategory
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
      * Get id
      *
      * @return integer
