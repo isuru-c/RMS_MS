@@ -58,13 +58,13 @@ class SportController extends Controller
      */
     public function sportViewAction(Request $request, $id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $connection = $em->getConnection();
 
         if($id == 0) {
 
             $query = "SELECT * FROM sport";
-            $statement = $connection->query($query);
+            $statement = $connection->prepare($query);
             $statement->execute();
             $sports = $statement->fetchAll();
 
@@ -74,7 +74,7 @@ class SportController extends Controller
         }
 
         $query = "SELECT * FROM sport WHERE id=" . $id ;
-        $statement = $connection->query($query);
+        $statement = $connection->prepare($query);
         $statement->execute();
         $sport = $statement->fetchAll();
 

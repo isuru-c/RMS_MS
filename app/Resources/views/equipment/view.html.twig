@@ -59,7 +59,7 @@
                             <td></td>
                             <td>
                                 <div class="item-actions">
-                                    <a href="" class="btn btn-sm btn-default">
+                                    <a href="{{ path('equipment_view_single',{'cat_id':category.id}) }}" class="btn btn-sm btn-default">
                                         <i class=""></i> Choose
                                     </a>
                                     {% if app.user and is_granted('ROLE_ADMIN') %}

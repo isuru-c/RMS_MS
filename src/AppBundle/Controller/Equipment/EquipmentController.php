@@ -67,7 +67,7 @@ class EquipmentController extends Controller
             return $this->redirectToRoute('equipment_view');
         }
 
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $connection = $em->getConnection();
 
         $query = "SELECT name, gender FROM sport WHERE id IN ";
@@ -83,8 +83,15 @@ class EquipmentController extends Controller
         $statement->execute();
         $category = $statement->fetchAll();
 
+        $query = "SELECT * FROM equipment WHERE equipment_category_id=$cat_id";
+
+        $statement = $connection->prepare($query);
+        $statement->execute();
+        $equip_list = $statement->fetchAll();
+
         return $this->render('equipment/single.html.twig', array(
-            'sport' => $sport, 'category' => $category[0],
+            'sport' => $sport[0], 'category' => $category[0],
+            'equip_list' => $equip_list, 'count' => sizeof($equip_list),
         ));
     }
 

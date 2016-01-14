@@ -12,15 +12,29 @@
             <h5>Show single equipment </h5>
 
             Sport           - {{ sport.name }}-{{ sport.gender }} </br>
-            Equipment name  - {{ category.name }}
-            Lend time       - {{ category.lend_time }}
+            Equipment name  - {{ category.name }}</br>
+            Lend time       - {{ category.lend_time }} days
 
         </div>
     </div>
 
     <div class="row ">
         <div class="well">
+            <h5>Total {{ count }} items registered</h5>
 
+            <div class="">
+                {% set c = 1 %}
+                {% for equip in equip_list %}
+                    <div class="panel panel-info">
+                        <div class="panel-heading">{{ category.name }}-{{ c }}</div>
+                        <div class="panel-body">
+                            Available   - {%  if equip.available == 1 %}Yes{% else %}No{% endif %}</br>
+                            Reserved    - {%  if equip.reserved == 1 %}Yes{% else %}No{% endif %}</br>
+                        </div>
+                    </div>
+                    {% set c = c + 1 %}
+                {% endfor %}
+            </div>
 
         </div>
     </div>

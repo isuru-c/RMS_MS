@@ -5,6 +5,10 @@ namespace AppBundle\Controller\Student;
 use AppBundle\Entity\Student;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
@@ -27,7 +31,7 @@ class StudentController extends Controller
 
         $student = new Student();
 
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $connection = $em->getConnection();
 
         $query = "SELECT DISTINCT faculty FROM fac_dep";
@@ -53,17 +57,19 @@ class StudentController extends Controller
         }
 
         $form = $this->createFormBuilder($student)
-            ->add('id', 'text')
-            ->add('firstName', 'text')
-            ->add('secondName', 'text', array('required' => false))
-            ->add('faculty', 'choice', array('choices' => $faculty_list))
-            ->add('department', 'choice', array('choices' => $department_list))
-            ->add('gender', 'choice', array('choices' => array('Male' => 'Male', 'Female'=>'Female')))
-            ->add('birthday', 'date', array('input'  => 'datetime', 'widget' => 'choice', 'years' => range(1980,2000)))
-            ->add('contactNumber', 'text')
-            ->add('eMail', 'text', array('required' => false))
-            ->add('address', 'text', array('required' => false))
-            ->add('save', 'submit', array('label'=>'Add new student'))
+            ->add('id', TextType::class)
+            ->add('firstName', TextType::class)
+            ->add('secondName', TextType::class, ['required' => false])
+            ->add('faculty', ChoiceType::class, ['choices' => $faculty_list])
+            ->add('department', ChoiceType::class, ['choices' => $department_list])
+            ->add('gender', ChoiceType::class,
+                    ['choices' => ['Male' => 'Male', 'Female'=>'Female'], 'choices_as_values' => true])
+            ->add('birthday', DateType::class,
+                    ['input'  => 'datetime', 'widget' => 'choice', 'years' => range(1980,2000)])
+            ->add('contactNumber', TextType::class)
+            ->add('eMail', TextType::class, ['required' => false])
+            ->add('address', TextType::class, ['required' => false])
+            ->add('save', SubmitType::class, ['label'=>'Add new student'])
             ->getForm();
 
         $form->handleRequest($request);
@@ -79,6 +85,37 @@ class StudentController extends Controller
         return $this->render('student/new.html.twig', array(
             'form' => $form->createView(),
         ));
+
+    }
+
+    /**
+     * @Route("/student/{id}", defaults={"id"=0}, name="student_single_view")
+     */
+    public function studentSingleViewAction(Request $request, $id){
+
+        if($id == 0){
+            return $this->redirectToRoute('student_view');
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $connection = $em->getConnection();
+
+        $query = "SELECT * FROM student WHERE id=$id";
+
+        $statement = $connection->prepare($query);
+        $statement->execute();
+        $student = $statement->fetchAll();
+
+        return $this->render('student/single.html.twig', array(
+            'student' => $student,
+        ));
+    }
+
+    /**
+     * @Route("/student/view", name="student_view")
+     */
+    public function studentViewAction(Request $request, $id){
+
 
     }
 }
