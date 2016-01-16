@@ -17,7 +17,16 @@
         </div>
     </div>
     {% else %}
-        New student successfully added to the system
+        <div class="row">
+            <div class="well">
+                New student successfully added to the system</br></br></br>
+
+                Student name  - {{ student.getFirstName }} {{ student.getSecondName }}</br>
+                Username      - {{ student.getId }}</br>
+                Password      - [Initial password] - pass@ + username
+            </div>
+
+        </div>
     {% endif %}
 
 {% endblock %}

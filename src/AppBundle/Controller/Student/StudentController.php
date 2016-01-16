@@ -3,6 +3,7 @@
 namespace AppBundle\Controller\Student;
 
 use AppBundle\Entity\Student;
+use AppBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -11,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\Validator\Constraints\Date;
 
 class StudentController extends Controller
 {
@@ -35,7 +37,7 @@ class StudentController extends Controller
         $connection = $em->getConnection();
 
         $query = "SELECT DISTINCT faculty FROM fac_dep";
-        $statement = $connection->query($query);
+        $statement = $connection->prepare($query);
         $statement->execute();
         $result = $statement->fetchAll();
 
@@ -46,7 +48,7 @@ class StudentController extends Controller
         }
 
         $query = "SELECT DISTINCT department FROM fac_dep";
-        $statement = $connection->query($query);
+        $statement = $connection->prepare($query);
         $statement->execute();
         $result = $statement->fetchAll();
 
@@ -75,11 +77,37 @@ class StudentController extends Controller
         $form->handleRequest($request);
 
         if($form->isValid()){
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($student);
-            $em->flush();
 
-            return $this->render('student/new.html.twig');
+            $query_student = "INSERT INTO student ";
+            $query_student .= "(id, first_name, second_name, faculty, department, gender, ";
+            $query_student .= "birthday, contact_number, e_mail, address)";
+            $query_student .= "VALUES ";
+            $query_student .= "('" . $student->getId() . "', '" . $student->getFirstName() . "', '" . $student->getSecondName() . "', ";
+            $query_student .= "'" . $student->getFaculty() . "', '" . $student->getDepartment() . "', '" . $student->getGender() . "', ";
+            $query_student .= "'" . $student->getBirthday()->format('y/m/d') . "', '" . $student->getContactNumber() . "', ";
+            $query_student .= "'" . $student->getEMail() . "', '" . $student->getAddress() . "' )";
+
+            $user = new User();
+            $initial_password = "pass@" . $student->getId();
+            $encoder = $this->container->get('security.password_encoder');
+            $encoded_password = $encoder->encodePassword($user, $initial_password);
+
+            $user->setUsername($student->getId());
+            $user->setPassword($encoded_password);
+            $user->setRole('ROLE_STUDENT');
+
+            $query_user = "INSERT INTO user (username, password, role) VALUES ";
+            $query_user .= "('" . $user->getUsername() . "', '" . $user->getPassword() . "', '" . $user->getRole() . "' )";
+
+            $statement = $connection->prepare($query_student);
+            $statement->execute();
+
+            $statement = $connection->prepare($query_user);
+            $statement->execute();
+
+            return $this->render('student/new.html.twig', array(
+                'student' => $student,
+            ));
         }
 
         return $this->render('student/new.html.twig', array(

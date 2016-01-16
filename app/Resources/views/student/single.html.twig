@@ -1,0 +1,86 @@
+{# student/single #}
+
+{% extends 'student/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="row well">
+        <div class="well">
+            <div class="col-sm-6">
+                {{ student.first_name }} {{ student.second_name }}</br>
+                {{ student.faculty }} faculty</br>
+                {{ student.department }} department
+            </div>
+            <div class="col-sm-2">
+                Edit button goes here
+            </div>
+            <div class="col-sm-4">
+                The picture goes here
+            </div>
+        </div>
+    </div>
+
+    <div class="row well" id="personal_details">
+        <div class="">
+            <div class="">
+                <h4>Personal details</h4>
+            </div>
+            <div>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>First name</td>
+                        <td>{{ student.first_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Second name</td>
+                        <td>{{ student.second_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Faculty</td>
+                        <td>{{ student.faculty }}</td>
+                    </tr>
+                    <tr>
+                        <td>Department</td>
+                        <td>{{ student.department }}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>{{ student.gender }}</td>
+                    </tr>
+                    <tr>
+                        <td>Birthday</td>
+                        <td>{{ student.birthday }}</td>
+                    </tr>
+                    <tr>
+                        <td>Contact number</td>
+                        <td>{{ student.contact_number }}</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail address</td>
+                        <td>{{ student.e_mail }}</td>
+                    </tr>
+                    <tr>
+                        <td>Home address</td>
+                        <td>{{ student.address }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row well">
+        <div class="">
+            <div>
+                <h5>Sport details</h5>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

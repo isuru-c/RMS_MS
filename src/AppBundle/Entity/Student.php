@@ -303,6 +303,20 @@ class Student
     }
 
     /**
+     * Set id
+     *
+     * @param string $id
+     *
+     * @return Student
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
      * Get id
      *
      * @return string
