@@ -11,9 +11,9 @@
         <div class="well">
             <h5>Show single equipment </h5>
 
-            Sport           - {{ sport.name }}-{{ sport.gender }} </br>
-            Equipment name  - {{ category.name }}</br>
-            Lend time       - {{ category.lend_time }} days
+            Sport - {{ sport.name }}-{{ sport.gender }} </br>
+            Equipment name - {{ category.name }}</br>
+            Lend time - {{ category.lend_time }} days
 
         </div>
     </div>
@@ -28,8 +28,88 @@
                     <div class="panel panel-info">
                         <div class="panel-heading">{{ category.name }}-{{ c }}</div>
                         <div class="panel-body">
-                            Available   - {%  if equip.available == 1 %}Yes{% else %}No{% endif %}</br>
-                            Reserved    - {%  if equip.reserved == 1 %}Yes{% else %}No{% endif %}</br>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Available - {% if equip.available == 1 %}Yes{% else %}No{% endif %}</br>
+                                    {% if equip.available == 0 %}
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <table>
+                                                    <tr>
+                                                        <td>Equipment is taken by</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Lend date</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Due date</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                {% if app.user and is_granted('ROLE_ADMIN') and equip.available == 1 %}
+                                    <div class="col-sm-6">
+                                        <div class="item-actions">
+                                            <a href="{{ path('equipment_lend', {'id':equip.id}) }}"
+                                               class="btn btn-sm btn-info">
+                                                <i class=""></i> Lend
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    Reserved - {% if equip.reserved == 1 %}Yes{% else %}No{% endif %}</br>
+                                    {% if equip.reserved == 1 %}
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <table>
+                                                    <tr>
+                                                        <td>Equipment is reserved by</td>
+                                                        <td>
+                                                            {% for res_det in equip_res_det %}
+                                                                {% if res_det.id == equip.id %}
+                                                                    {{ res_det.student_id }}
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Expire date</td>
+                                                        <td>
+                                                            {% for res_det in equip_res_det %}
+                                                                {% if res_det.id == equip.id %}
+                                                                    {{ res_det.reserved_date }}
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                {% if app.user and is_granted('ROLE_STUDENT') and equip.reserved == 0 %}
+                                    <div class="col-sm-6">
+                                        <div class="item-actions">
+                                            <a href="{{ path('equipment_reserve', {'id':equip.id}) }}"
+                                               class="btn btn-sm btn-info">
+                                                <i class=""></i> Reserve now
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                     {% set c = c + 1 %}

@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bbb0c92-7d74-4665-9844-436e6c79a873" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/student/assign.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Student/StudentController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Student/StudentController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/equipment/msg.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RMS_MS.iws" />
@@ -26,49 +28,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EquipmentController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EquipmentController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="171" column="45" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.663837">
+              <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
               <folding>
-                <element signature="e#50#109#0#PHP" expanded="true" />
+                <element signature="e#50#85#0#PHP" expanded="true" />
+                <element signature="e#744#876#0#PHP" expanded="false" />
+                <element signature="e#991#2016#0#PHP" expanded="false" />
+                <element signature="e#2140#3771#0#PHP" expanded="false" />
+                <element signature="e#3847#5961#0#PHP" expanded="false" />
+                <element signature="e#6083#6633#0#PHP" expanded="false" />
+                <element signature="e#6747#8139#0#PHP" expanded="false" />
+                <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+                <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+                <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+                <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+                <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+                <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+                <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+                <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+                <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+                <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+                <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+                <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+                <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+                <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+                <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+                <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+                <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+                <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+                <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+                <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Student/StudentController.php">
+      <file leaf-file-name="single.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="172" column="46" selection-start-line="172" selection-start-column="46" selection-end-line="172" selection-end-column="46" />
-              <folding>
-                <element signature="e#48#74#0#PHP" expanded="true" />
-                <element signature="e#819#1007#0#PHP" expanded="false" />
-                <element signature="e#1122#4815#0#PHP" expanded="false" />
-                <element signature="e#4923#5478#0#PHP" expanded="false" />
-                <element signature="e#5552#5617#0#PHP" expanded="false" />
-                <marker date="1453021384487" expanded="true" signature="1323:1359" placeholder="SELECT DISTI..fac_dep..." />
-                <marker date="1453021384487" expanded="true" signature="1646:1685" placeholder="SELECT DISTI..fac_dep..." />
-                <marker date="1453021384487" expanded="true" signature="3026:3045" placeholder="INSERT INTO ..." />
-                <marker date="1453021384487" expanded="true" signature="4188:4238" placeholder="INSERT INTO ..." />
-                <marker date="1453021384487" expanded="true" signature="5193:5224" placeholder="SELECT * FRO..student..." />
-                <marker date="1453021384487" expanded="true" signature="5193:5225" placeholder="SELECT * FRO..student..." />
-                <marker date="1453021384487" expanded="true" signature="5193:5229" placeholder="SELECT * FRO..student..." />
-                <marker date="1453021384487" expanded="true" signature="6171:6243" placeholder="SELECT first..student..." />
-                <marker date="1453021384487" expanded="true" signature="6171:6255" placeholder="SELECT first..student..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assign.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/student/assign.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+            <state vertical-scroll-proportion="-26.666666">
+              <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="msg.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/msg.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.0">
+              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+              <folding>
+                <marker date="1453045732179" expanded="true" signature="98:521" placeholder="{% block main ...%}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,15 +105,17 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/EquipmentCategory.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/equipment/home.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/sport/view.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/sport/view1.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/Sport/SportController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Student.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/student/new.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/student/assign.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/Student/StudentController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/equipment/a.html" />
+        <option value="$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/equipment/msg.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php" />
       </list>
     </option>
   </component>
@@ -142,7 +159,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -405,7 +422,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,26 +472,26 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="24" width="1319" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28986645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24037707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -501,12 +518,46 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/EquipmentReserve.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="171" column="45" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="45" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>
@@ -521,15 +572,14 @@
             <element signature="e#1122#4815#0#PHP" expanded="false" />
             <element signature="e#4923#5478#0#PHP" expanded="false" />
             <element signature="e#5552#5617#0#PHP" expanded="false" />
-            <marker date="1453021384487" expanded="true" signature="1323:1359" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="1646:1685" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="3026:3045" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="4188:4238" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5224" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5225" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5229" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6243" placeholder="SELECT first..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6255" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT name,..sport..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -547,7 +597,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="36" selection-end-column="41" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>
@@ -562,15 +638,14 @@
             <element signature="e#1122#4815#0#PHP" expanded="false" />
             <element signature="e#4923#5478#0#PHP" expanded="false" />
             <element signature="e#5552#5617#0#PHP" expanded="false" />
-            <marker date="1453021384487" expanded="true" signature="1323:1359" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="1646:1685" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="3026:3045" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="4188:4238" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5224" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5225" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5229" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6243" placeholder="SELECT first..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6255" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT name,..sport..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -579,6 +654,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -595,7 +671,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="99" selection-start-line="61" selection-start-column="78" selection-end-line="61" selection-end-column="99" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>
@@ -610,15 +712,14 @@
             <element signature="e#1122#4815#0#PHP" expanded="false" />
             <element signature="e#4923#5478#0#PHP" expanded="false" />
             <element signature="e#5552#5617#0#PHP" expanded="false" />
-            <marker date="1453021384487" expanded="true" signature="1323:1359" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="1646:1685" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="3026:3045" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="4188:4238" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5224" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5225" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5229" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6243" placeholder="SELECT first..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6255" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT name,..sport..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -627,6 +728,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="325" column="22" selection-start-line="325" selection-start-column="22" selection-end-line="325" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -642,7 +744,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="99" selection-start-line="61" selection-start-column="78" selection-end-line="61" selection-end-column="99" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>
@@ -657,15 +785,14 @@
             <element signature="e#1122#4815#0#PHP" expanded="false" />
             <element signature="e#4923#5478#0#PHP" expanded="false" />
             <element signature="e#5552#5617#0#PHP" expanded="false" />
-            <marker date="1453021384487" expanded="true" signature="1323:1359" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="1646:1685" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="3026:3045" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="4188:4238" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5224" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5225" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5229" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6243" placeholder="SELECT first..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6255" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT name,..sport..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -682,7 +809,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>
@@ -692,7 +845,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="52" column="5" selection-start-line="19" selection-start-column="4" selection-end-line="52" selection-end-column="5" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>
@@ -709,7 +888,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>
@@ -733,7 +938,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>
@@ -750,7 +981,33 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>
@@ -794,6 +1051,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.033956">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -829,13 +1087,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.148149">
           <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18336163">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -843,20 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.111111">
           <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.851851">
-          <caret line="61" column="98" selection-start-line="61" selection-start-column="98" selection-end-line="61" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.666667">
-          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -885,6 +1123,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="325" column="22" selection-start-line="325" selection-start-column="22" selection-end-line="325" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -899,13 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/student/assign.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -917,35 +1149,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/EquipmentReserve.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="171" column="45" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="45" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/view.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/student/assign.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.0">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18336163">
+          <caret line="6" column="40" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/msg.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.0">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
           <folding>
-            <element signature="e#50#109#0#PHP" expanded="true" />
+            <marker date="1453045732179" expanded="true" signature="98:521" placeholder="{% block main ...%}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Student/StudentController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="172" column="46" selection-start-line="172" selection-start-column="46" selection-end-line="172" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.7249575">
+          <caret line="158" column="12" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="51" />
           <folding>
             <element signature="e#48#74#0#PHP" expanded="true" />
             <element signature="e#819#1007#0#PHP" expanded="false" />
             <element signature="e#1122#4815#0#PHP" expanded="false" />
             <element signature="e#4923#5478#0#PHP" expanded="false" />
             <element signature="e#5552#5617#0#PHP" expanded="false" />
-            <marker date="1453021384487" expanded="true" signature="1323:1359" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="1646:1685" placeholder="SELECT DISTI..fac_dep..." />
-            <marker date="1453021384487" expanded="true" signature="3026:3045" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="4188:4238" placeholder="INSERT INTO ..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5224" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5225" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="5193:5229" placeholder="SELECT * FRO..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6243" placeholder="SELECT first..student..." />
-            <marker date="1453021384487" expanded="true" signature="6171:6255" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT DISTI..fac_dep..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT first..student..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="SELECT name,..sport..." />
+            <marker date="1453021384487" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/equipment/single.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.666666">
+          <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.663837">
+          <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+          <folding>
+            <element signature="e#50#85#0#PHP" expanded="true" />
+            <element signature="e#744#876#0#PHP" expanded="false" />
+            <element signature="e#991#2016#0#PHP" expanded="false" />
+            <element signature="e#2140#3771#0#PHP" expanded="false" />
+            <element signature="e#3847#5961#0#PHP" expanded="false" />
+            <element signature="e#6083#6633#0#PHP" expanded="false" />
+            <element signature="e#6747#8139#0#PHP" expanded="false" />
+            <marker date="1453054138646" expanded="true" signature="1171:1205" placeholder="SELECT id, n..sport..." />
+            <marker date="1453054138646" expanded="true" signature="1649:1697" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2422:2464" placeholder="SELECT name,..sport..." />
+            <marker date="1453054138646" expanded="true" signature="2691:2747" placeholder="SELECT name,..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="2904:2956" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3176" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3177" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="3115:3251" placeholder="SELECT * FRO..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="5029:5059" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="5396:5444" placeholder="SELECT MAX(i..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="6266:6340" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7244" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7306" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7203:7360" placeholder="SELECT * FRO..equipment_category..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7302" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7249:7303" placeholder="SELECT id FR..equipment..." />
+            <marker date="1453054138646" expanded="true" signature="7490:7575" placeholder="INSERT INTO ..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7735" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7741" placeholder="UPDATE equip..." />
+            <marker date="1453054138646" expanded="true" signature="7704:7745" placeholder="UPDATE equip..." />
           </folding>
         </state>
       </provider>

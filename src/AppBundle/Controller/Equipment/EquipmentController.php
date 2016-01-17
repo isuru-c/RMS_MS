@@ -2,14 +2,17 @@
 
 namespace AppBundle\Controller\Equipment;
 
+use AppBundle\Entity\EquipmentLend;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\EquipmentCategory;
+use AppBundle\Entity\EquipmentReserve;
 
 class EquipmentController extends Controller
 {
@@ -27,7 +30,7 @@ class EquipmentController extends Controller
      */
     public function viewEquipmentAction(Request $request, $sport_id){
 
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $connection = $em->getConnection();
 
         $query = "SELECT id, name, gender FROM sport";
@@ -89,9 +92,17 @@ class EquipmentController extends Controller
         $statement->execute();
         $equip_list = $statement->fetchAll();
 
+        $query4 = "SELECT equipment.id, reserved_date, student_id FROM equipment ";
+        $query4 .= "LEFT OUTER JOIN equipment_reserve ON (equipment.id=equipment_reserve.equipment_id) ";
+        $query4 .= "WHERE equipment.equipment_category_id=$cat_id AND equipment_reserve.state=1";
+
+        $statement = $connection->prepare($query4);
+        $statement->execute();
+        $equip_res_det = $statement->fetchAll();
+
         return $this->render('equipment/single.html.twig', array(
-            'sport' => $sport[0], 'category' => $category[0],
-            'equip_list' => $equip_list, 'count' => sizeof($equip_list),
+            'sport' => $sport[0], 'category' => $category[0], 'equip_list' => $equip_list,
+            'count' => sizeof($equip_list), 'equip_res_det' => $equip_res_det,
         ));
     }
 
@@ -177,5 +188,75 @@ class EquipmentController extends Controller
         }
 
         return $this->redirectToRoute('equipment_homepage');
+    }
+
+    /**
+     * @Route("/equipment/reserve/{id}", defaults={"id"=0}, name="equipment_reserve")     *
+     */
+    public function reserveEquipmentAction(Request $request, $id){
+
+        $this->denyAccessUnlessGranted('ROLE_STUDENT', null, 'Only student can reserve equipments!');
+
+        if($id == 0){
+            return $this->redirectToRoute('equipment_view');
+        }
+
+        $connection = $this->getDoctrine()->getManager()->getConnection();
+
+        $user= $this->get('security.context')->getToken()->getUser();
+        $equipment_id = $id;
+
+        $query1 = "SELECT * FROM equipment_category WHERE id IN (SELECT equipment_category_id FROM equipment WHERE id=$id)";
+
+        $statement = $connection->prepare($query1);
+        $statement->execute();
+        $category = $statement->fetchAll();
+
+        $today = date("Y/m/d");
+
+        $query2 = "INSERT INTO equipment_reserve (reserved_date, student_id, equipment_id, state) VALUES ";
+        $query2 .= "(" . $today . ", '" . $user->getUsername() . "', " . $equipment_id . ", " . 1 . ")";
+
+        $query3 = "UPDATE equipment SET reserved=1 WHERE id=$id";
+
+        $statement = $connection->prepare($query2);
+        $statement->execute();
+
+        $statement = $connection->prepare($query3);
+        $statement->execute();
+
+        $msg = "A " . $category[0]['name'] . " reserved for student Id " . $user->getUsername();
+
+        return $this->render('equipment/msg.html.twig', array(
+            'msg' => $msg, 'path' => "",
+        ));
+    }
+
+    /**
+     * @Route("/equipment/lend/{id}", defaults={"id"=0}, name="equipment_lend")
+     */
+    public function lendEquipmentAction(Request $request, $id){
+
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Only admin can give away equipments!');
+
+        if($id == 0){
+            return $this->redirectToRoute('equipment_view');
+        }
+
+        $connection = $this->getDoctrine()->getManager()->getConnection();
+
+        $el = new EquipmentLend();
+
+        $form = $this->createFormBuilder($el)
+            ->add('student_id', TextType::class)
+            ->add('lend_date', DateType::class)
+            ->add('due_date', DateType::class)
+            ->add('save', SubmitType::class)
+            ->getForm();
+
+
+        return $this->render('equipment/lend.html.twig', array(
+            'form' => $form,
+        ));
     }
 }
