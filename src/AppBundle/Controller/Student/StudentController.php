@@ -2,11 +2,13 @@
 
 namespace AppBundle\Controller\Student;
 
+use AppBundle\Entity\Play;
 use AppBundle\Entity\Student;
 use AppBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -117,7 +119,7 @@ class StudentController extends Controller
     }
 
     /**
-     * @Route("/student/{id}", defaults={"id"=0}, name="student_single_view")
+     * @Route("/student/profile/{id}", defaults={"id"=0}, name="student_single_view")
      */
     public function studentSingleViewAction(Request $request, $id){
 
@@ -128,14 +130,14 @@ class StudentController extends Controller
         $em = $this->getDoctrine()->getManager();
         $connection = $em->getConnection();
 
-        $query = "SELECT * FROM student WHERE id=$id";
+        $query = "SELECT * FROM student WHERE id='$id'";
 
         $statement = $connection->prepare($query);
         $statement->execute();
         $student = $statement->fetchAll();
 
         return $this->render('student/single.html.twig', array(
-            'student' => $student,
+            'student' => $student[0],
         ));
     }
 
@@ -145,5 +147,75 @@ class StudentController extends Controller
     public function studentViewAction(Request $request, $id){
 
 
+    }
+
+    /**
+     * @Route("student/assign", name="assign_sport")
+     */
+    public function assignSport(Request $request){
+
+        if($request->getMethod() == 'POST'){
+
+            $form = $request->request->get('form');
+            $student_id = $form['student'];
+            $sport_id = $form['sport'] + 1;
+            $sd = $form['start_date'];
+            $start_date = $sd['year'] . '/' . $sd['month'] . '/' . $sd['day'];
+
+            $em = $this->getDoctrine()->getManager();
+            $connection = $em->getConnection();
+
+            $query1 = "SELECT first_name, second_name, gender, birthday FROM student WHERE id='$student_id'";
+            $statement = $connection->prepare($query1);
+            $statement->execute();
+            $result1 = $statement->fetchAll();
+
+            //student validation for existance
+
+            $query2 = "SELECT name, gender, minimum_age FROM sport WHERE id='$sport_id'";
+            $statement = $connection->prepare($query2);
+            $statement->execute();
+            $result2 = $statement->fetchAll();
+
+            //student validation for sport
+
+            $query3 = "INSERT INTO play (student_id, sport_id, start_date) VALUES ";
+            $query3 .= "('" . $student_id . "', '" . $sport_id . "', '" . $start_date . "')";
+            $statement = $connection->prepare($query3);
+            $statement->execute();
+
+            return $this->render('student/assign.html.twig', array(
+                'msg' => "Student added to the sport ",
+            ));
+        }
+
+
+        $em = $this->getDoctrine()->getManager();
+        $sports = $em->getRepository('AppBundle:Sport')->findAll();
+
+        $play = new Play();
+
+        $form = $this->createFormBuilder($play)
+            ->add('student', TextType::class)
+            ->add('sport', ChoiceType::class, [
+                'choices' => $sports,
+                'choice_label' => function($sport, $key, $index) {
+                    return $sport->getName() . ' - ' . $sport->getGender();
+                },
+                'choice_attr' => function($sport, $key, $index) {
+                    return ['value' => $sport->getId()];
+                },
+                'choices_as_values' => true,
+                'placeholder' => 'Choose a sport',
+            ])
+            ->add('start_date', DateType::class, [
+                'placeholder' => array('year' => 'Year', 'month' => 'Month', 'day' => 'Day'),
+            ])
+            ->add('save', SubmitType::class, ['label' => 'Add student to sport'])
+            ->getForm();
+
+        return $this->render('student/assign.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
 }
