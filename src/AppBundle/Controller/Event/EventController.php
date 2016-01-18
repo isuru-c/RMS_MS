@@ -92,4 +92,40 @@ class EventController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+    /**
+     * @Route("/event/view/{sport_id}", defaults={"sport_id"=0}, name="event_view")
+     */
+    public function viewEventAction(Request $request, $sport_id){
+
+        $em = $this->getDoctrine()->getManager();
+        $connection = $em->getConnection();
+
+        $query = "SELECT id, name, gender FROM sport";
+
+        $statement = $connection->prepare($query);
+        $statement->execute();
+        $sports = $statement->fetchAll();
+
+        if($request->isMethod('POST')){
+            $sport_id = $request->request->get('sport_id');
+        }
+
+        if($sport_id == 0){
+
+            return $this->render('event/view.html.twig', array(
+                'sports' => $sports, 'sport_id' => $sport_id,
+            ));
+        }
+
+        $query = "SELECT * FROM event WHERE sport_id=$sport_id";
+        $statement = $connection->prepare($query);
+        $statement->execute();
+        $event_list = $statement->fetchAll();
+
+        return $this->render('event/view.html.twig', array(
+            'sports' => $sports, 'sport_id' => $sport_id, 'event_list' => $event_list,
+        ));
+
+    }
 }

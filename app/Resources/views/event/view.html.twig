@@ -1,0 +1,88 @@
+{# event/view #}
+
+{% extends 'event/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="row ">
+        <div class="well">
+            <h5>Select a sport </h5>
+            <div class="row">
+                <form method="post" action="">
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <select name="sport_id" required="required" class="form-control">
+                                <option value selected="selected">Choose a sport</option>
+                                {% for sport in sports %}
+                                    <option value="{{ sport.id }}" {% if sport.id == sport_id %} selected="selected" {% endif %}>
+                                        {{ sport.name }}-{{ sport.gender }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn-primary btn">Select</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="well">
+
+            {% if event_list is defined %}
+
+                <h4>Equipments belongs to -- </h4>
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th> Name</th>
+                        <th> Type</th>
+                        <th> Start date</th>
+                        <th> End date</th>
+                        <th> State</th>
+                        <th> Opponent</th>
+                        <th> Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for event in event_list %}
+                        <tr>
+                            <td> {{ event.title }} </td>
+                            <td> {% if event.title == 1 %}Single{% else %}{% if event.title == 2 %}Dual{% else %}Team{% endif %}{% endif %}  </td>
+                            <td> {{ event.start_date|date('Y-m-d') }}</td>
+                            <td> {{ event.end_date|date('Y-m-d') }}</td>
+                            <td> {% if event.state == 1 %}Won{% else %}{% if event.state == 2 %}Lost{% else %}{% if event.state == 3%}Draw{% else %}Not yet finished{% endif %}{% endif %}{% endif %}</td>
+                            <td> {{ event.opponent }}</td>
+                            <td>
+                                <div class="item-actions">
+                                    <a href="" class="btn btn-sm btn-default">
+                                        <i class=""></i> Choose
+                                    </a>
+                                    {% if app.user and is_granted('ROLE_ADMIN') %}
+                                        <a href="" class="btn btn-sm btn-primary">
+                                            <i class=""></i> Edit
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            {% else %}
+                Please select a sport from above
+            {% endif %}
+
+
+        </div>
+    </div>
+
+{% endblock %}
