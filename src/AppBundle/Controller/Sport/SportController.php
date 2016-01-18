@@ -53,8 +53,7 @@ class SportController extends Controller
 
 
     /**
-     * @Route("/sport/view/{id}", defaults={"id" = 0}, name="sport_view")
-     *
+     * @Route("/sport/view/{id}", defaults={"id" = 0}, name="sport_view")     *
      */
     public function sportViewAction(Request $request, $id)
     {

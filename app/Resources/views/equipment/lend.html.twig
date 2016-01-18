@@ -1,0 +1,54 @@
+{# equipment/lend#}
+
+{% extends 'equipment/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    <div class="row ">
+        <div class="well">
+            <h5>Lending an equipment </h5>
+
+            Equipment name - {{ category.name }}</br>
+            Lend time - {{ category.lend_time }} days
+
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="well">
+            <form method="post" action="{% if reserved_item %}{{ path('equipment_lend_finish', {"id":reserve.equipment_id}) }} {% else %} {{ path('equipment_lend_finish', {"id":equip_id}) }}{% endif %}" class="form-horizontal">
+                <div id="form">
+                    {% if reserved_item %}
+                        <h5>Lending a reserved equipment</h5>
+                    {% else %}
+                        <h5>Lending a non reserved equipment</h5>
+                    {% endif %}
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required" for="student_id">Student Id</label>
+                            <div class="col-sm-10">
+                                <input id="student_id" name="student_id" type="text" required="required"
+                                       class="form-control" {% if reserved_item %} value="{{ reserve.student_id }}" readonly {% endif %}>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label required" for="due_date">Due date</label>
+                            <div class="col-sm-10">
+                                <input id="due_date" name="due_date" type="text" required="required"
+                                       class="form-control" value="{{ due_date }}" readonly>
+                            </div>
+                        </div>
+                        <input type="hidden" name="reservation_id" value="{% if reserved_item %} {{ reserve.id }} {% else %}0{% endif %}" class="form-control">
+                    <div class="form-group">
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn-primary btn">Lend</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
