@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="match_member", indexes={@ORM\Index(name="match_id", columns={"match_id"}), @ORM\Index(name="student_id", columns={"student_id"})})
  * @ORM\Entity
  */
-class MatchMember
+class EventMember
 {
     /**
      * @var string

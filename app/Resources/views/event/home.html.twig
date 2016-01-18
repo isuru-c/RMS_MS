@@ -1,6 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block side_navigation %}
+    <div class="list-group">
+        <a href="" class="list-group-item">Browse events</a>
+        {% if app.user and is_granted('ROLE_STUDENT') %}
+            <a href="" class="list-group-item">My events</a>
+        {% endif %}
+        {% if app.user and is_granted('ROLE_ADMIN') %}
+            <a href="" class="list-group-item">Add new event</a>
+        {% endif %}
+    </div>
 {% endblock %}
 
 {% block about %}

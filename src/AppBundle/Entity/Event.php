@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="match", indexes={@ORM\Index(name="sport_id", columns={"sport_id"})})
  * @ORM\Entity
  */
-class Match
+class Event
 {
     /**
      * @var integer
@@ -45,7 +45,7 @@ class Match
      *
      * @ORM\Column(name="oppenent", type="string", length=100, nullable=true)
      */
-    private $oppenent;
+    private $opponent;
 
     /**
      * @var string
@@ -53,6 +53,13 @@ class Match
      * @ORM\Column(name="remarks", type="string", length=500, nullable=true)
      */
     private $remarks;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=50, nullable=true)
+     */
+    private $title;
 
     /**
      * @var integer
@@ -80,7 +87,7 @@ class Match
      *
      * @param integer $type
      *
-     * @return Match
+     * @return Event
      */
     public function setType($type)
     {
@@ -104,7 +111,7 @@ class Match
      *
      * @param \DateTime $startDate
      *
-     * @return Match
+     * @return Event
      */
     public function setStartDate($startDate)
     {
@@ -128,7 +135,7 @@ class Match
      *
      * @param \DateTime $endDate
      *
-     * @return Match
+     * @return Event
      */
     public function setEndDate($endDate)
     {
@@ -152,7 +159,7 @@ class Match
      *
      * @param integer $state
      *
-     * @return Match
+     * @return Event
      */
     public function setState($state)
     {
@@ -172,27 +179,51 @@ class Match
     }
 
     /**
-     * Set oppenent
+     * Set opponent
      *
-     * @param string $oppenent
+     * @param string $opponent
      *
-     * @return Match
+     * @return Event
      */
-    public function setOppenent($oppenent)
+    public function setOpponent($opponent)
     {
-        $this->oppenent = $oppenent;
+        $this->opponent = $opponent;
 
         return $this;
     }
 
     /**
-     * Get oppenent
+     * Get opponent
      *
      * @return string
      */
-    public function getOppenent()
+    public function getOpponent()
     {
-        return $this->oppenent;
+        return $this->opponent;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Event
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 
     /**
@@ -200,7 +231,7 @@ class Match
      *
      * @param string $remarks
      *
-     * @return Match
+     * @return Event
      */
     public function setRemarks($remarks)
     {
@@ -234,7 +265,7 @@ class Match
      *
      * @param \AppBundle\Entity\Sport $sport
      *
-     * @return Match
+     * @return Event
      */
     public function setSport(\AppBundle\Entity\Sport $sport = null)
     {

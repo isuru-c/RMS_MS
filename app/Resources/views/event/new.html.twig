@@ -1,0 +1,40 @@
+{# event/new #}
+
+{% extends 'event/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    {% if form is defined %}
+        <div class="row well" xmlns="http://www.w3.org/1999/html">
+            Adding new event to the system
+        </div>
+
+        {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+        <div class="col-sm-11">
+            <div class="well">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    {% else %}
+        <div class="row well">
+            <h4>New event successfully added to the system</h4>
+
+            Sport name    -  {{ sport.name }}</br>
+            Event title   -  {{ event.title }}</br>
+            Event type    -  {% if event.title == 1 %}Single{% else %}{% if event.title == 2 %}Dual{% else %}Team{% endif %}{% endif %}</br>
+            Start date    -  {{ s_date }}</br>
+            End date      -  {{ e_date }}</br>
+            Event state   -  {% if event.state == 1 %}Won{% else %}{% if event.state == 2 %}Lost{% else %}{% if event.state == 3%}Draw{% else %}Not yet finished{% endif %}{% endif %}{% endif %}</br>
+            Opponent      -  {{ event.opponent }}</br>
+            Remarks       -  {{ event.remarks }}</br>
+
+        </div>
+
+    {% endif %}
+
+{% endblock %}

@@ -342,4 +342,11 @@ class EquipmentController extends Controller
             'msg' => $msg, 'path' => "",
         ));
     }
+
+    /**
+     * @Route("equipment/return/{id}", defaults={"id"=0}, name="equipment_return")
+     */
+    public function equipmentReturnAction(Request $request){
+
+    }
 }
