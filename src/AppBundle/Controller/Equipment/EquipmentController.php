@@ -100,9 +100,20 @@ class EquipmentController extends Controller
         $statement->execute();
         $equip_res_det = $statement->fetchAll();
 
+        $query5 = "SELECT student_id, equipment_id, lend_date, due_date FROM equipment_lend ";
+        $query5 .= "LEFT JOIN equipment_reserve ON (equipment_reserve.id=equipment_lend.equipment_reserve_id) ";
+        $query5 .= "WHERE equipment_lend.state=1 AND equipment_id IN ";
+        $query5 .= "(SELECT id FROM equipment WHERE equipment_category_id=$cat_id)";
+
+        $statement = $connection->prepare($query5);
+        $statement->execute();
+        $equip_lend_det = $statement->fetchAll();
+
+        var_dump($equip_lend_det);
+
         return $this->render('equipment/single.html.twig', array(
             'sport' => $sport[0], 'category' => $category[0], 'equip_list' => $equip_list,
-            'count' => sizeof($equip_list), 'equip_res_det' => $equip_res_det,
+            'count' => sizeof($equip_list), 'equip_res_det' => $equip_res_det, 'equip_lend_det' => $equip_lend_det,
         ));
     }
 

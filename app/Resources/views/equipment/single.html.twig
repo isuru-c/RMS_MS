@@ -38,16 +38,34 @@
                                             <div class="col-sm-10">
                                                 <table>
                                                     <tr>
-                                                        <td>Equipment is taken by</td>
-                                                        <td></td>
+                                                        <td>Equipment is taken by - </td>
+                                                        <td>
+                                                            {% for lend_det in equip_lend_det %}
+                                                                {% if lend_det.equipment_id == equip.id %}
+                                                                    {{ lend_det.student_id }}
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Lend date</td>
-                                                        <td></td>
+                                                        <td>Lend date - </td>
+                                                        <td>
+                                                            {% for lend_det in equip_lend_det %}
+                                                                {% if lend_det.equipment_id == equip.id %}
+                                                                    {{ lend_det.lend_date }}
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Due date</td>
-                                                        <td></td>
+                                                        <td>Due date - </td>
+                                                        <td>
+                                                            {% for lend_det in equip_lend_det %}
+                                                                {% if lend_det.equipment_id == equip.id %}
+                                                                    {{ lend_det.due_date }}
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </td>
                                                     </tr>
                                                 </table>
                                             </div>
@@ -75,7 +93,7 @@
                                             <div class="col-sm-10">
                                                 <table>
                                                     <tr>
-                                                        <td>Equipment is reserved by</td>
+                                                        <td>Equipment is reserved by - </td>
                                                         <td>
                                                             {% for res_det in equip_res_det %}
                                                                 {% if res_det.id == equip.id %}
@@ -85,7 +103,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Expire date</td>
+                                                        <td>Expire date - </td>
                                                         <td>
                                                             {% for res_det in equip_res_det %}
                                                                 {% if res_det.id == equip.id %}
