@@ -3,14 +3,17 @@
 {% extends 'base.html.twig' %}
 
 {% block side_navigation %}
-    <ul class="nav nav-tabs nav-stacked">
-        <li role="presentation" ><a href=""></a></li>
-        <li role="presentation" ><a href=""></a></li>
-        <li role="presentation" ><a href="#"></a></li>
-        {% if app.user and is_granted('ROLE_ADMIN') %}
-            <li role="presentation" ><a href="{{ path('student_new') }}">Add new student</a></li>
+    <div class="list-group">
+        <a href="" class="list-group-item">All students</a>
+        {% if app.user and is_granted('ROLE_STUDENT') %}
+            <a href="" class="list-group-item">My profile</a>
+            <a href="" class="list-group-item">My practice schedule</a>
         {% endif %}
-    </ul>
+        {% if app.user and is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('student_new') }}" class="list-group-item">Add new student</a>
+            <a href="" class="list-group-item">---</a>
+        {% endif %}
+    </div>
 {% endblock %}
 
 {% block about %}

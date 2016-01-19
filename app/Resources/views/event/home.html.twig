@@ -2,12 +2,15 @@
 
 {% block side_navigation %}
     <div class="list-group">
-        <a href="" class="list-group-item">Browse events</a>
+        <a href="{{ path('event_view') }}" class="list-group-item">Browse events</a>
+        <a href="" class="list-group-item">Practice schedule</a>
         {% if app.user and is_granted('ROLE_STUDENT') %}
-            <a href="" class="list-group-item">My events</a>
+            <a href="{{ path('event_view') }}" class="list-group-item">My events</a>
+            <a href="" class="list-group-item">My practice schedule</a>
         {% endif %}
         {% if app.user and is_granted('ROLE_ADMIN') %}
-            <a href="" class="list-group-item">Add new event</a>
+            <a href="{{ path('event_new') }}" class="list-group-item">Add new event</a>
+            <a href="" class="list-group-item">New practice schedule</a>
         {% endif %}
     </div>
 {% endblock %}

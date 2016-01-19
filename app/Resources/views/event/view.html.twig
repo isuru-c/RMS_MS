@@ -55,21 +55,16 @@
                     {% for event in event_list %}
                         <tr>
                             <td> {{ event.title }} </td>
-                            <td> {% if event.title == 1 %}Single{% else %}{% if event.title == 2 %}Dual{% else %}Team{% endif %}{% endif %}  </td>
+                            <td> {% if event.type == 1 %}Single{% else %}{% if event.type == 2 %}Dual{% else %}Team{% endif %}{% endif %}  </td>
                             <td> {{ event.start_date|date('Y-m-d') }}</td>
                             <td> {{ event.end_date|date('Y-m-d') }}</td>
                             <td> {% if event.state == 1 %}Won{% else %}{% if event.state == 2 %}Lost{% else %}{% if event.state == 3%}Draw{% else %}Not yet finished{% endif %}{% endif %}{% endif %}</td>
                             <td> {{ event.opponent }}</td>
                             <td>
                                 <div class="item-actions">
-                                    <a href="" class="btn btn-sm btn-default">
+                                    <a href="{{ path('event_single', {'event_id':event.id}) }}" class="btn btn-sm btn-primary">
                                         <i class=""></i> Choose
                                     </a>
-                                    {% if app.user and is_granted('ROLE_ADMIN') %}
-                                        <a href="" class="btn btn-sm btn-primary">
-                                            <i class=""></i> Edit
-                                        </a>
-                                    {% endif %}
                                 </div>
                             </td>
                         </tr>

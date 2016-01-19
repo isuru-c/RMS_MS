@@ -128,4 +128,71 @@ class EventController extends Controller
         ));
 
     }
+
+    /**
+     * @Route("/event/view/single/{event_id}", defaults={"event_id"=0}, name="event_single")
+     */
+    public function viewSingleAction(Request $request, $event_id){
+
+        if($event_id == 0){
+            $this->redirectToRoute('event_view');
+        }
+
+        $connection = $this->getDoctrine()->getManager()->getConnection();
+
+        $query1 = "SELECT * FROM event WHERE id=$event_id";
+
+        $statement = $connection->prepare($query1);
+        $statement->execute();
+        $event = $statement->fetchAll();
+
+        $query2 = "SELECT name, gender FROM sport WHERE id IN (SELECT sport_id FROM event WHERE id=$event_id)";
+
+        $statement = $connection->prepare($query2);
+        $statement->execute();
+        $sport = $statement->fetchAll();
+
+        $query3 = "SELECT student_id, remarks, first_name, second_name FROM event_member INNER JOIN student ON (event_member.student_id=student.id) WHERE event_id=$event_id";
+
+        $statement = $connection->prepare($query3);
+        $statement->execute();
+        $students = $statement->fetchAll();
+
+        return $this->render('event/single.html.twig', array(
+            'event' => $event[0], 'sport' => $sport[0], 'students' => $students,
+        ));
+    }
+
+    /**
+     * @Route("/event/add/student/{event_id}", name="add_event_student")
+     */
+    public function addStudentEventAction(Request $request, $event_id){
+
+        $connection = $this->getDoctrine()->getManager()->getConnection();
+
+        if($request->getMethod() == 'POST'){
+
+            $student_id = $request->request->get('student_id');
+            $remarks = $request->request->get('remarks');
+
+            $query = "INSERT INTO event_member (event_id, student_id, remarks) VALUES ($event_id, '$student_id','$remarks')";
+
+            $statement = $connection->prepare($query);
+            $statement->execute();
+
+            return $this->redirectToRoute('event_single', ['event_id'=>$event_id]);
+            echo "sddsd";
+        }
+
+        $query1 = "SELECT * FROM event WHERE id=$event_id";
+
+        $statement = $connection->prepare($query1);
+        $statement->execute();
+        $event = $statement->fetchAll();
+
+        return $this->render('event/mem.html.twig', array(
+            'event' => $event[0],
+        ));
+    }
 }
+

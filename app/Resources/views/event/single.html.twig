@@ -1,0 +1,93 @@
+{# event/single #}
+
+{% extends 'event/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+    <div class="row well">
+        <div class="well">
+            <div class="col-sm-7">
+                <h4><u>{{ event.title }} - {{ sport.name }}-{{ sport.gender }}</u>'</h4>
+
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td>Event title</td>
+                        <td>{{ event.title }}</td>
+                    </tr>
+                    <tr>
+                        <td>Event type</td>
+                        <td>{% if event.type == 1 %}Single{% else %}{% if event.type == 2 %}Dual{% else %}Team{% endif %}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td>Start date</td>
+                        <td>{{ event.start_date|date('Y-m-d') }}</td>
+                    </tr>
+                    <tr>
+                        <td>End date</td>
+                        <td>{{ event.end_date|date('Y-m-d') }}</td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td>{% if event.state == 1 %}Won{% else %}{% if event.state == 2 %}Lost{% else %}{% if event.state == 3%}Draw{% else %}Not yet finished{% endif %}{% endif %}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td>Opponent</td>
+                        <td>{{ event.opponent }}</td>
+                    </tr>
+                    <tr>
+                        <td>Remarks</td>
+                        <td>{{ event.remarks }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="row well">
+        <div class="col-sm-10">
+            <h4>Member students of this event</h4>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th> Student Id</th>
+                    <th> Name</th>
+                    <th> Remarks</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td> {{ student.student_id }} </td>
+                        <td> {{ student.first_name }} {{ student.second_name }}</td>
+                        <td> {{ student.remarks }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-2">
+            <div class="item-actions">
+                <a href="{{ path('add_event_student', {'event_id':1}) }}"
+                   class="btn btn-sm btn-primary">
+                    <i class=""></i> Add student
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="item-actions">
+                <a href=""
+                   class="btn btn-sm btn-info">
+                    <i class=""></i> Go to ...
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
