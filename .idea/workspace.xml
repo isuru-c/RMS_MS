@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bbb0c92-7d74-4665-9844-436e6c79a873" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/event/mem.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/event/single.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Event/EventController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Event/EventController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/event/home.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/event/home.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/student/home.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/student/home.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/event/msg.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/event/msg.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/event/view.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/event/view.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RMS_MS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,36 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EquipmentController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Equipment/EquipmentController.php">
+      <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/event/home.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="200" column="28" selection-start-line="200" selection-start-column="22" selection-end-line="200" selection-end-column="28" />
-              <folding>
-                <element signature="e#50#85#0#PHP" expanded="true" />
-                <element signature="e#744#876#0#PHP" expanded="false" />
-                <element signature="e#991#2016#0#PHP" expanded="false" />
-                <element signature="e#4420#6534#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="single.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/event/single.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4804754">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mem.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/event/mem.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.666667">
-              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.36672327">
+              <caret line="12" column="69" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -133,13 +101,13 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/EventMember.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Event.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/event/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/event/home.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/student/home.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/event/view.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/event/msg.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/event/mem.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/Event/EventController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/event/single.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/event/home.html.twig" />
       </list>
     </option>
   </component>
@@ -427,7 +395,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="-4" width="1319" height="772" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -801,13 +769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09168082">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/student/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24448217">
@@ -863,6 +824,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/mem.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.666667">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/single.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4804754">
+          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Event/EventController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.333333">
@@ -894,18 +871,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/mem.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.666667">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/event/single.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4804754">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.36672327">
+          <caret line="12" column="69" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
           <folding />
         </state>
       </provider>

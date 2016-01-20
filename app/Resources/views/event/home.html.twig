@@ -10,6 +10,7 @@
         {% endif %}
         {% if app.user and is_granted('ROLE_ADMIN') %}
             <a href="{{ path('event_new') }}" class="list-group-item">Add new event</a>
+            <a href="" class="list-group-item">All practice schedules</a>
             <a href="" class="list-group-item">New practice schedule</a>
         {% endif %}
     </div>
