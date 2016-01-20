@@ -36,10 +36,8 @@ CREATE TABLE IF NOT EXISTS play (
    sport_id int(5) NOT NULL,
    start_date date NOT NULL,
    PRIMARY KEY ( id ),
-   FOREIGN KEY ( student_id ) REFERENCES student ( id )
-      ON UPDATE CASCADE ON DELETE RESTRICT,
-   FOREIGN KEY ( sport_id ) REFERENCES sport ( id )
-      ON UPDATE CASCADE ON DELETE RESTRICT
+   FOREIGN KEY ( student_id ) REFERENCES student ( id ) ON UPDATE CASCADE ON DELETE RESTRICT,
+   FOREIGN KEY ( sport_id ) REFERENCES sport ( id ) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE IF NOT EXISTS coach (
@@ -59,10 +57,8 @@ CREATE TABLE IF NOT EXISTS instruct (
    sport_id int(5) NOT NULL,
    start_date date NOT NULL,
    PRIMARY KEY ( id ),
-   FOREIGN KEY ( coach_id ) REFERENCES coach ( id )
-      ON UPDATE CASCADE ON DELETE RESTRICT,
-   FOREIGN KEY ( sport_id ) REFERENCES sport ( id )
-      ON UPDATE CASCADE ON DELETE RESTRICT
+   FOREIGN KEY ( coach_id ) REFERENCES coach ( id ) ON UPDATE CASCADE ON DELETE RESTRICT,
+   FOREIGN KEY ( sport_id ) REFERENCES sport ( id ) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE IF NOT EXISTS equipment_category (
@@ -71,8 +67,7 @@ CREATE TABLE IF NOT EXISTS equipment_category (
    name varchar(50) NOT NULL,
    sport_id int(5) DEFAULT NULL,
    PRIMARY KEY ( id ),
-   FOREIGN KEY ( sport_id ) REFERENCES sport ( id )
-      ON UPDATE CASCADE ON DELETE RESTRICT
+   FOREIGN KEY ( sport_id ) REFERENCES sport ( id ) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE IF NOT EXISTS equipment (
@@ -81,8 +76,7 @@ CREATE TABLE IF NOT EXISTS equipment (
    available int(1) NOT NULL,
    reserved int(1) NOT NULL,
    PRIMARY KEY ( id ),
-   FOREIGN KEY ( equipment_category_id ) REFERENCES equipment_category ( id )
-      ON UPDATE CASCADE ON DELETE CASCADE
+   FOREIGN KEY ( equipment_category_id ) REFERENCES equipment_category ( id ) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS equipment_reserve (
@@ -92,10 +86,8 @@ CREATE TABLE IF NOT EXISTS equipment_reserve (
    equipment_id int(5) DEFAULT NULL,
    state int(1) NOT NULL,
    PRIMARY KEY ( id ),
-   FOREIGN KEY ( student_id ) REFERENCES student ( id )
-      ON UPDATE CASCADE ON DELETE RESTRICT,
-   FOREIGN KEY ( equipment_id ) REFERENCES equipment ( id )
-      ON UPDATE CASCADE ON DELETE CASCADE
+   FOREIGN KEY ( student_id ) REFERENCES student ( id ) ON UPDATE CASCADE ON DELETE RESTRICT,
+   FOREIGN KEY ( equipment_id ) REFERENCES equipment ( id ) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS equipment_lend (
@@ -106,8 +98,7 @@ CREATE TABLE IF NOT EXISTS equipment_lend (
    state int(1) NOT NULL,
    returned_date date DEFAULT NULL,
    PRIMARY KEY ( id ),
-   FOREIGN KEY ( equipment_reserve_id ) REFERENCES equipment_reserve ( id )
-      ON UPDATE CASCADE ON DELETE CASCADE
+   FOREIGN KEY ( equipment_reserve_id ) REFERENCES equipment_reserve ( id ) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS event (
@@ -121,8 +112,7 @@ CREATE TABLE IF NOT EXISTS event (
    opponent varchar(100) DEFAULT NULL,
    remarks varchar(500) DEFAULT NULL,
    PRIMARY KEY ( id ),
-   FOREIGN KEY ( sport_id ) REFERENCES sport ( id )
-      ON UPDATE CASCADE ON DELETE RESTRICT
+   FOREIGN KEY ( sport_id ) REFERENCES sport ( id ) ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE IF NOT EXISTS event_member (
@@ -131,10 +121,8 @@ CREATE TABLE IF NOT EXISTS event_member (
    student_id varchar(8) DEFAULT NULL,
    remarks varchar(100) DEFAULT NULL,
    PRIMARY KEY ( id ),
-   FOREIGN KEY ( event_id ) REFERENCES event ( id )
-      ON UPDATE CASCADE ON DELETE CASCADE,
-   FOREIGN KEY ( student_id ) REFERENCES student ( id )
-      ON UPDATE CASCADE ON DELETE SET NULL
+   FOREIGN KEY ( event_id ) REFERENCES event ( id ) ON UPDATE CASCADE ON DELETE CASCADE,
+   FOREIGN KEY ( student_id ) REFERENCES student ( id ) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
 CREATE TABLE IF NOT EXISTS awards (
@@ -143,10 +131,8 @@ CREATE TABLE IF NOT EXISTS awards (
    description varchar(100) DEFAULT NULL,
    student_id varchar(8) DEFAULT NULL,
    PRIMARY KEY (id),
-   FOREIGN KEY (event_id) REFERENCES event (id)
-      ON UPDATE CASCADE ON DELETE SET NULL,
-   FOREIGN KEY (student_id) REFERENCES student (id)
-      ON UPDATE CASCADE ON DELETE CASCADE
+   FOREIGN KEY (event_id) REFERENCES event (id) ON UPDATE CASCADE ON DELETE SET NULL,
+   FOREIGN KEY (student_id) REFERENCES student (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS practice_schedule (
@@ -157,8 +143,7 @@ CREATE TABLE IF NOT EXISTS practice_schedule (
    end_time time NOT NULL,
    description varchar(200) DEFAULT NULL,
    PRIMARY KEY ( id ),
-   FOREIGN KEY ( sport_id ) REFERENCES sport ( id )
-      ON UPDATE CASCADE ON DELETE CASCADE
+   FOREIGN KEY ( sport_id ) REFERENCES sport ( id ) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS fac_dep (
@@ -167,6 +152,65 @@ CREATE TABLE IF NOT EXISTS fac_dep (
    PRIMARY KEY ( faculty , department )
 );
 
+
+-- Add triggers
+
+-- An equipment is reserved by a student
+-- Set the reserved state in equipment after the equipment is reserved
+
+DELIMITER $$
+CREATE TRIGGER reservation_t AFTER INSERT ON equipment_reserve
+   FOR each ROW
+   BEGIN
+      UPDATE equipment SET reserve=1 WHERE equipment.id=NEW.equipment_id;
+   END;
+$$
+DELIMITER ;
+
+
+-- An equipment is lended to a student
+-- Unset the available state in equipment after the equipment is lended
+-- Unset the reserved state in equipment after the equipment is lended
+
+DELIMITER $$
+CREATE TRIGGER lending_t AFTER INSERT ON equipment_lend
+   FOR each ROW
+   BEGIN
+      UPDATE equipment_reserve SET state=2 WHERE id=NEW.equipment_reserve_id;
+      UPDATE equipment SET available=0 WHERE equipment.id IN ( SELECT equipment_id FROM equipment_reserve WHERE id=NEW.equipment_reserve_id );
+      UPDATE equipment SET reserve=0 WHERE equipment.id IN ( SELECT equipment_id FROM equipment_reserve WHERE id=NEW.equipment_reserve_id );
+   END;
+$$
+DELIMITER ;
+
+
+-- An equipment is returned by a student
+-- Set the available state in equipment after the equipment is returned
+
+DELIMITER $$
+CREATE TRIGGER return_t AFTER UPDATE ON equipment_lend
+   FOR each ROW
+   BEGIN
+      UPDATE equipment SET available=1 WHERE equipment.id IN ( SELECT equipment_id FROM equipment_reserve WHERE id=NEW.equipment_reserve_id );
+   END;
+$$
+DELIMITER ;
+
+
+
+-- Add functions
+
+-- Function to get the age of s student
+
+DELIMITER $$
+CREATE FUNCTION age(student_id varchar(8)) RETURNS int
+   BEGIN 
+      DECLARE age int; 
+      SELECT FLOOR(DATEDIFF(CURDATE(), birthday)/365.25) INTO age FROM student WHERE id=student_id; 
+      RETURN age;  
+   END;
+$$
+DELIMITER ;
 
 
 
