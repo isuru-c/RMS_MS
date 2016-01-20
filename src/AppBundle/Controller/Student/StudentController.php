@@ -132,17 +132,17 @@ class StudentController extends Controller
 
     }
 
-    public function studentViewByStudents(Request $request){
+   /* public function studentViewByStudents(Request $request){
         $em = $this->getDoctrine()->getEntityManager();
         $connection = $em->getConnection();
-        $query = 'SELECT *'
+        //$query = 'SELECT *'
         $statement = $connection->prepare("SELECT * FROM student");
         $statement->execute();
         $students=$statement->fetchAll();
 
         return $this->render('student/view.html.twig', array('Students'=>$students));
 
-    }
+    }*/
 
     /**
      * @Route("/student/my_view/{id}", defaults={"id"=0}, name="student_my_view")
