@@ -132,6 +132,18 @@ class StudentController extends Controller
 
     }
 
+    public function studentViewByStudents(Request $request){
+        $em = $this->getDoctrine()->getEntityManager();
+        $connection = $em->getConnection();
+        $query = 'SELECT *'
+        $statement = $connection->prepare("SELECT * FROM student");
+        $statement->execute();
+        $students=$statement->fetchAll();
+
+        return $this->render('student/view.html.twig', array('Students'=>$students));
+
+    }
+
     /**
      * @Route("/student/my_view/{id}", defaults={"id"=0}, name="student_my_view")
 
@@ -146,9 +158,8 @@ class StudentController extends Controller
         $id = $user->getUsername();
 
 
-        $query = 'SELECT id, first_name, second_name, ';
-        $query .= 'faculty, department, gender, birthday, ';
-        $query .= 'contact_number, e_mail, address ';
+
+        $query = 'SELECT * ';
         $query .='FROM v ';                    // v here is the view
         $query .= 'WHERE sport_id IN (';
         $query .= 'SELECT sport_id ';
