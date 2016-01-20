@@ -1,0 +1,44 @@
+{# student/my_view #}
+
+{% extends 'student/home.html.twig' %}
+
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    <h1>Colleagues </h1>
+
+
+    <table class = "table table-striped">
+        <thead>
+        <tr>
+
+            <th><i class="fa fa-key"></i> Index Number </th>
+            <th><i class="fa fa-user"></i> first Name</th>
+            <th><i class="fa fa-user"></i> Second Name</th>
+            <th><span class="fa-stack fa-lg">
+                   <i class="fa fa-male fa-stack-2x"></i>
+                    <i class="fa fa-female fa-stack-1x"></i>
+                </span>Gender</th>
+            <th><i class="fa fa-futbol-o"></i> Sport</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in Students %}
+            <tr>
+
+                <td> {{ student.student_id }} </td>
+                <td> {{student.first_name}}</td>
+                <td> {{ student.second_name}} </td>
+                <td> {{ student.gender }} </td>
+                <td>{{ student.sport_name }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

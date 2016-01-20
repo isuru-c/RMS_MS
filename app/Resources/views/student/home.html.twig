@@ -8,6 +8,7 @@
             <a href="{{ path('student_view_profile') }}" class="list-group-item"><i class="fa fa-eye"> View My Profile</i></a>
             <a href="{{ path('student_edit_profile') }}" class="list-group-item"><i class="fa fa-pencil-square-o"> Edit My Profile</i></a>
             <a href="" class="list-group-item"><i class="fa fa-calendar"> My practice schedule</i></a>
+            <a href="{{ path('players_view') }}" class="list-group-item"><i class="fa fa-child"> View Colleagues </i></a>
         {% endif %}
         {% if app.user and is_granted('ROLE_ADMIN') %}
             <a href="{{ path('student_new') }}" class="list-group-item"><i class="fa fa-plus"> Add new student</i></a>

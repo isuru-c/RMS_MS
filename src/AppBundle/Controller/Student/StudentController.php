@@ -131,18 +131,35 @@ class StudentController extends Controller
         return $this->render('student/view.html.twig', array('Students'=>$students));
 
     }
+    /**
+     * @Route("/student/players_view/{id}", defaults={"id"=0}, name="players_view")
 
-   /* public function studentViewByStudents(Request $request){
+     *
+     */
+
+   public function studentViewByStudents(Request $request){
+
+       $user = $this->getUser();
+       $id = $user->getUsername();
+
+
         $em = $this->getDoctrine()->getEntityManager();
         $connection = $em->getConnection();
-        //$query = 'SELECT *'
-        $statement = $connection->prepare("SELECT * FROM student");
+
+        $query = 'SELECT *';
+        $query .= 'FROM player_2 ';
+        $query .= 'WHERE sport_id IN (';
+        $query .= 'SELECT sport_id ';
+        $query .= 'FROM play WHERE ';
+        $query .= 'student_id = :id)';
+        $statement = $connection->prepare($query);
+        $statement->bindValue('id', $id);
         $statement->execute();
         $students=$statement->fetchAll();
 
-        return $this->render('student/view.html.twig', array('Students'=>$students));
+        return $this->render('student/players_view.html.twig', array('Students'=>$students));
 
-    }*/
+    }
 
     /**
      * @Route("/student/my_view/{id}", defaults={"id"=0}, name="student_my_view")
@@ -324,6 +341,8 @@ class StudentController extends Controller
 
         return $this->render('student/view_profile.html.twig', array('Student'=>$student));
     }
+
+    
 
     /**
      * @Route("student/assign", name="assign_sport")
