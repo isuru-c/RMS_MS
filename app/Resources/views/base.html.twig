@@ -72,16 +72,17 @@
                                         <i class="fa fa-bel"></i> Equipments
                                     </a>
                                 </li>
+                            {% endif %}
 
-                                    {% if app.user and is_granted('ROLE_ADMIN') %}
+                            {% if app.user and (is_granted('ROLE_ADMIN') or is_granted('ROLE_STUDENT') or is_granted('ROLE_COACH')) %}
                                 <li>
                                     <a href="{{ path('student_homepage') }}">
                                         <i class="fa fa-child"></i> Students
                                     </a>
                                 </li>
-                                {% endif %}
-
                             {% endif %}
+
+
 
                             <li>
                                 <a href="{{ path('event_homepage') }}">
@@ -124,15 +125,32 @@
         <div class="row">
 
             <div id="main" class="col-sm-9">
-                {% block main %}This is the Homepage {% endblock %}
+                {% block main %}<h1> MoraSpirit </h1>
+                    <h2> Resource Management System</h2>
+                    <br>
+                    <div class="section about">
+                        <p>This application is developed for the purpose of managing sport equipments of Mora spirit.
+                            The system also means to manage the student details who are involved in sports within the university.
+                            It is also capable of managing the supplies of sports equipment to the students, managing the student resource allocation schedule and managing the practice schedule.</p>
+                    </div>
+                {% endblock %}
             </div>
 
             <div id="sidebar" class="col-sm-3">
                 {% block sidebar %}
 
+
                     <div class="section about">
                         <div class="well well-lg">
                             {% block side_navigation %}
+                                <p>
+                                    <a href="https://twitter.com/moraspiritNews"><i class="fa fa-twitter"> Follow us on Twitter</i><br><br></a>
+                                    <a href="https://www.facebook.com/moraspirit.fanpage"><i class="fa fa-facebook-official"> Find us on Facebook</i><br><br></a>
+                                    <a href="https://plus.google.com/108795907592684921602/posts"><i class="fa fa-google-plus"> Join with us on Google Plus</i> <br><br></a>
+                                    <a href="https://www.youtube.com/user/moraspiritNews?feature=watch"><i class="fa fa-youtube"> See us in action on Youtube</i> <br><br></a>
+                                    <a href="http://moraspiritblog.blogspot.com/"><i class="fa fa-rss"> Visit our blog</i><br><br></a>
+                                    <a href="https://www.linkedin.com/company/moraspirit-initiative"><i class="fa fa-linkedin-square"> Connect with us on LinkedIn</i> <br><br> </a>
+                                </p>
                             {% endblock %}
                         </div>
                     </div>
@@ -142,12 +160,6 @@
                             {% block about %}
                             {% endblock %}
                         </div>
-                    </div>
-
-                    <div class="section about">
-                        <p>This application is developed for the purpose of managing sport equipments of Mora spirit.</p>
-                        <p>The system also means to manage the student details who are involved in sports within the university.</p>
-                        <p>It is also capable of managing the supplies of sports equipment to the students, managing the student resource allocation schedule and managing the practice schedule.</p>
                     </div>
 
                 {% endblock %}
@@ -162,15 +174,11 @@
         <div class="container">
             <div class="row">
                 <div id="footer-copyright" class="col-md-6">
-                    <p>&copy; {{ 'now'|date('Y') }} - The Database Project</p>
+                    <p>&copy; {{ 'now'|date('Y') }} MoraSpirit Resource Management System</p>
                     <p>{{ 'ic_license'|trans }}</p>
                 </div>
                 <div id="footer-resources" class="col-md-6">
-                    <p>
-                        <a href="https://twitter.com/symfony"><i class="fa fa-twitter"></i></a>
-                        <a href="https://www.facebook.com/SensioLabs"><i class="fa fa-facebook"></i></a>
-                        <a href="http://symfony.com/blog"><i class="fa fa-rss"></i></a>
-                    </p>
+
                 </div>
             </div>
         </div>
