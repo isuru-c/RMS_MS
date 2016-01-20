@@ -1,0 +1,23 @@
+{# student/edit #}
+
+{% extends 'student/home.html.twig' %}
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    {% if form is defined %}
+        {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+            </div>
+        </div>
+        {{ form_end(form) }}
+    {% else %}
+        Profile details successfully updated
+    {% endif %}
+
+{% endblock %}

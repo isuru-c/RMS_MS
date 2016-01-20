@@ -1,0 +1,52 @@
+{# student/my_view #}
+
+{% extends 'student/home.html.twig' %}
+
+
+{% block about %}
+{% endblock %}
+
+{% block main %}
+
+    <h1>List of all students doing {{ Sport.name }}</h1>
+
+
+    <table class = "table table-striped">
+        <thead>
+        <tr>
+
+            <th><i class="fa fa-key"></i> Index Number</th>
+            <th><i class="fa fa-user"></i> first Name</th>
+            <th><i class="fa fa-user"></i> Second Name</th>
+            <th><i class="fa fa-building"></i> Faculty</th>
+            <th><i class="fa fa-building-o"></i> Department</th>
+            <th><span class="fa-stack fa-lg">
+                   <i class="fa fa-male fa-stack-2x"></i>
+                    <i class="fa fa-female fa-stack-1x"></i>
+                </span>Gender</th>
+            <th><i class="fa fa-birthday-cake"></i> Birthday</th>
+            <th><i class="fa fa-phone"></i> Contact Number</th>
+            <th><i class="fa fa-envelope"></i> Email</th>
+            <th><i class="fa fa-map-marker"></i> Private Address</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in Students %}
+            <tr>
+
+                <td> {{ student.id }} </td>
+                <td> {{student.first_name}}</td>
+                <td> {{ student.second_name}} </td>
+                <td> {{ student.faculty }} </td>
+                <td> {{ student.department }} </td>
+                <td> {{ student.gender }} </td>
+                <td> {{ student.birthday }}</td>
+                <td> {{ student.contact_number}} </td>
+                <td> {{ student.e_mail }} </td>
+                <td> {{ student.address }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

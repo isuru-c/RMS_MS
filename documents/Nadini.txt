@@ -1,0 +1,6 @@
+CREATE OR REPLACE VIEW v AS 
+SELECT  p.sport_id, s.id, s.first_name, s.second_name, s.faculty, s.department, s.gender, s.birthday, s.contact_number, s.e_mail, s.address 
+FROM student AS s, play AS P 
+WHERE s.id = p.student_id;
+
+CREATE INDEX sportID_index ON coach(sport_id);
